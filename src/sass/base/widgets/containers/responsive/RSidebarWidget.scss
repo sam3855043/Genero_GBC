@@ -1,0 +1,201 @@
+/*
+ * FOURJS_START_COPYRIGHT(D,2020)
+ * Property of Four Js*
+ * (c) Copyright Four Js 2020, 2024. All Rights Reserved.
+ * * Trademark of Four Js Development Tools Europe Ltd
+ *   in the United States and elsewhere
+ *
+ * This file can be modified by licensees according to the
+ * product manual.
+ * FOURJS_END_COPYRIGHT */
+
+:root{
+  --applistWidth: #{$theme-sidebar-default-width};
+};
+
+.gbc_RSidebarWidget {
+  --applistBackgroundColor: #{$theme-sidebar-background-color};
+  --applistHoverFilter: var(--themeHoverFilter);
+  --titleContainerHeight: #{$gbc-ChromeBarWidget-height};
+
+  z-index: 59;
+  display: flex;
+  height: 100%;
+  width: var(--applistWidth);
+  user-select: none;
+
+  &.mt-sidebar-unavailable.mt-sidebar-displayed,
+  .has-applist-sidebar &{
+    left: 0;
+  }
+
+  .content {
+    height: 100%;
+    width: var(--applistWidth);
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .applistContainer.visible{
+    width: 100%;
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .settingsContainer.visible{
+    width: 100%;
+    flex: 0 0 auto;
+  }
+
+  .titleContainer{
+    .mt-sidebar-toggle{
+      width: auto;
+    }
+    .zmdi{
+      opacity: 0;
+      font-size: $gbc-ChromeBarWidget-item-height;
+      width: $theme-sidebar-default-width;
+      justify-content: center;
+    }
+    display: flex;
+    height: var(--titleContainerHeight);
+    flex: 0 0 auto;
+    background: $theme-primary-background-color;
+    color: $theme-sidebar-title-color;
+    justify-content: flex-start;
+
+    &.visible {
+      .zmdi{
+        opacity: 1;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .mt-sidebar-title-text {
+      display: none;
+
+      &.selected {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .mt-sidebar-content{
+    display: flex;
+    flex-direction: row;
+    position: initial;
+    height: 100%;
+  }
+
+  .topmenuContainer{
+    position: fixed;
+    height: 100%;
+    z-index: 59;
+    width: 0;
+    display: flex;
+
+    .is-mobile-device & .gbc_RSidebarTopMenuWidget {
+      font-size: 0.8em;
+    }
+    &.visible {
+      width: 28vw;
+      min-width: calc(10em + 28vw);
+      left: var(--applistWidth);
+    }
+
+    background: $gbc-TopMenuWidget-sidebar-background-color;
+    overflow: hidden;
+  }
+  &.has-top-menu.mt-sidebar-displayed{
+    .topmenuContainer{
+      flex-direction: column;
+      width: 28vw;
+    }
+  }
+
+  .settingsContainer.visible{
+    color: $theme-sidebar-settings-color;
+    font-size: 1.8em;
+    text-align: center;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0.5em;
+  }
+
+  .mt-content-topmenu{
+    flex: 1 1 auto;
+    display: none;
+    z-index: 1;
+  }
+  &.has-top-menu {
+    .mt-content-topmenu {
+      display: block;
+    }
+  }
+
+  //handle expanded sidebar
+  &.expanded{
+
+    .mt-sidebar-title-text {
+      display: inherit;
+      .is-mobile-device & {
+        font-size: 0.8em;
+      }
+    }
+    .mt-sidebar-toggle {
+     width: auto;
+    }
+
+  }
+
+  .mt-content{
+    flex: 0 1 auto;
+  }
+}
+
+.settingsContainer{
+  background: var(--applistBackgroundColor);
+  width: var(--applistWidth);
+  overflow: hidden;
+
+  .zmdi-cog{
+    opacity: 0; // for now
+  }
+
+  .arrow-expand {
+    .expanded &{
+      transform: scale(-1, 1);
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+// Handle switch between app icon and topmenu icon
+.gbc_ApplicationHostWidget {
+  &.has-applist-sidebar .gbc_RSidebarWidget .mt-sidebar-toggle {
+    .zmdi-menu {
+      display: none;
+    }
+    .zmdi-apps {
+      display: flex;
+    }
+  }
+  &.has-topmenu-sidebar .gbc_RSidebarWidget .mt-sidebar-toggle {
+    .zmdi-menu {
+      display: flex;
+    }
+    .zmdi-apps {
+      display: none;
+    }
+  }
+}

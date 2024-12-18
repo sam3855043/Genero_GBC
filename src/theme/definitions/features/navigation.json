@@ -1,0 +1,43 @@
+{
+  "name": "Navigation",
+  "title": "Navigation variables",
+  "description": "Swipe Navigation Style",
+  "type": "group",
+  "contents": [{
+      "name": "gbc-navigation-arrows-z-index",
+      "description": "",
+      "type": "number",
+      "defaultValue": "$z-index-above-Normal"
+    },
+    {
+      "name": "gbc-navigation-dots-z-index",
+      "description": "",
+      "type": "number",
+      "defaultValue": "$z-index-above-Normal"
+    },
+    {
+      "name": "gbc-navigation-arrows-color",
+      "description": "",
+      "type": "color",
+      "defaultValue": "$theme-secondary-faded-color"
+    },
+    {
+      "name": "gbc-navigation-arrows-child-color",
+      "description": "",
+      "type": "color",
+      "defaultValue": "$theme-primary-color"
+    },
+    {
+      "name": "gbc-navigation-dots-color",
+      "description": "",
+      "type": "color",
+      "defaultValue": "$theme-secondary-faded-color"
+    },
+    {
+      "name": "gbc-navigation-dots-current-color",
+      "description": "",
+      "type": "color",
+      "defaultValue": "$theme-primary-color"
+    }
+  ]
+}

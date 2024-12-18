@@ -1,0 +1,19 @@
+{
+  "name": "PageWidget",
+  "title": "Page specific variables",
+  "description": "",
+  "type": "group",
+  "contents": [{
+      "name": "gbc-PageWidget-background-color",
+      "description": "",
+      "type": "color",
+      "defaultValue": "$theme-secondary-alternative-background-color"
+    },
+    {
+      "name": "gbc-PageTitleWidget-icon-size",
+      "description": "",
+      "type": "size",
+      "defaultValue": "$theme-small-icon-size"
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "compile": {
+    "mode": "cdev",
+    "customization": "customization/sample"
+  },
+  "themes": [
+    {
+      "name": "default",
+      "title": "Desktop",
+      "uses": ["platform/browser", "platform/desktop"]
+    },
+    {
+      "name": "default_dark",
+      "title": "Desktop Dark",
+      "uses": ["platform/browser", "platform/desktop", "colors/dark"]
+    },
+    {
+      "name": "compact",
+      "title": "Desktop Compact",
+      "uses": ["platform/browser", "colors/compact"]
+    },
+    {
+      "name": "compact_dark",
+      "title": "Desktop Compact Dark",
+      "uses": ["platform/browser", "colors/compact", "colors/dark"]
+    },
+
+    {
+      "name": "default_mobile",
+      "title": "Mobile",
+      "uses": ["platform/browser", "platform/mobile"]
+    },
+    {
+      "name": "default_mobile_dark",
+      "title": "Mobile Dark",
+      "uses": ["platform/browser", "platform/mobile", "colors/dark"]
+    },
+
+    {
+      "name": "ur_default",
+      "title": "UR",
+      "uses": ["platform/ur", "platform/desktop"]
+    },
+    {
+      "name": "ur_default_dark",
+      "title": "UR Dark",
+      "uses": ["platform/ur", "platform/desktop", "colors/dark"]
+    },
+
+    {
+      "name": "ur_compact",
+      "title": "UR Compact",
+      "uses": ["platform/ur", "colors/compact"]
+    },
+    {
+      "name": "ur_compact_dark",
+      "title": "UR Compact Dark",
+      "uses": ["platform/ur", "colors/compact", "colors/dark"]
+    },
+
+    {
+      "name": "ur_default_mobile",
+      "title": "UR Mobile",
+      "uses": ["platform/ur", "platform/mobile"]
+    },
+    {
+      "name": "ur_default_mobile_dark",
+      "title": "UR Mobile Dark",
+      "uses": ["platform/ur", "platform/mobile", "colors/dark"]
+    },
+
+    {
+      "name": "highcontrast",
+      "title": "High Contrast",
+      "uses": ["platform/browser", "platform/desktop", "colors/highcontrast"]
+    },
+    {
+      "name": "highcontrast_mobile",
+      "title": "High Contrast",
+      "uses": ["platform/browser", "platform/mobile", "colors/highcontrast"]
+    },
+    {
+      "name": "ur_highcontrast",
+      "title": "High Contrast",
+      "uses": ["platform/ur", "platform/desktop", "colors/highcontrast"]
+    },
+    {
+      "name": "ur_highcontrast_mobile",
+      "title": "High Contrast",
+      "uses": ["platform/ur", "platform/mobile", "colors/highcontrast"]
+    }
+  ]
+}

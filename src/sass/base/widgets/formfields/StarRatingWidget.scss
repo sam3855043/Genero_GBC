@@ -1,0 +1,73 @@
+/*
+ * FOURJS_START_COPYRIGHT(D,2023)
+ * Property of Four Js*
+ * (c) Copyright Four Js 2023, 2024. All Rights Reserved.
+ * * Trademark of Four Js Development Tools Europe Ltd
+ *   in the United States and elsewhere
+ *
+ * This file can be modified by licensees according to the
+ * product manual.
+ * FOURJS_END_COPYRIGHT */
+
+@mixin gbc_StarRatingWidgetMixin(
+  $checkedColor: gold,
+  $checkedContent: "\02605",
+  $uncheckedColor: gray,
+  $uncheckedContent: "\02605"
+) {
+  color: $checkedColor;
+  .rating_star {
+    &::before {
+      content: $checkedContent;
+    }
+
+    &.unchecked {
+      color: $uncheckedColor;
+
+      &::before {
+        content: $uncheckedContent;
+      }
+    }
+
+    &.hoverable:hover:before {
+      content: $checkedContent;
+    }
+  }
+}
+
+.gbc_StarRatingWidget {
+  @include gbc_StarRatingWidgetMixin;
+  .gbc_StarRatingInput {
+    display: none;
+  }
+
+  border-radius: 2px;
+  padding: 2px;
+  // color: gold;
+
+  &.gbc_Focus {
+    border: 1px dashed;
+  }
+
+  .rating_star {
+    font-style: normal;
+
+    &.disabled {
+      opacity: 0.5;
+    }
+
+    &.hoverable:hover{
+      text-shadow: 0 0 4px;
+      color: inherit;
+      cursor: pointer;
+      scale: 1.3;
+    }
+  }
+}
+
+/** Force the widget to have the good height. 
+A bit dirty, but as the star rating don't have it's own genero widget
+it's overkill creating a Layout Engine just for it */
+.g_measuring .gbc_StarRatingWidget .gbc_StarRatingInput {
+    display: block;
+}

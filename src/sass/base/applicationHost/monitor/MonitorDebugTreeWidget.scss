@@ -1,0 +1,38 @@
+/*
+ * FOURJS_START_COPYRIGHT(D,2018)
+ * Property of Four Js*
+ * (c) Copyright Four Js 2018, 2024. All Rights Reserved.
+ * * Trademark of Four Js Development Tools Europe Ltd
+ *   in the United States and elsewhere
+ *
+ * This file can be modified by licensees according to the
+ * product manual.
+ * FOURJS_END_COPYRIGHT */
+
+.gbc_MonitorDebugTreeWidget {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  > .part{
+    display: flex;
+    position: relative;
+    flex: 1 1 50px;
+    overflow: auto;
+    padding: 2px 4px;
+    width: 100%;
+    >.tree{
+      width: 40%;
+      overflow: auto;
+    }
+    >.property{
+      padding-left: 10px; 
+      width: 60%; 
+      overflow: auto;
+    }
+  }
+
+  .vmFocusedNode > .description:first-child{
+    border: 1px dotted #cccccc;
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "name": "MenuWidget",
+  "title": "Menu specific variables",
+  "description": "",
+  "type": "group",
+  "contents": [{
+      "name": "gbc-MenuWidget-margin-ratio",
+      "description": "",
+      "type": "number",
+      "defaultValue": "$theme-margin-ratio"
+    },
+    {
+      "name": "gbc-MenuWidget-item-height-ratio",
+      "description": "",
+      "type": "number",
+      "defaultValue": "$theme-field-height-ratio"
+    },
+    {
+      "name": "gbc-MenuWidget-tabbed-z-index",
+      "description": "",
+      "type": "number",
+      "defaultValue": "$z-index-Tabbed-Modal"
+    },
+    {
+      "name": "gbc-MenuWidget-dropdown-padding-left",
+      "title": "Menu style popup left padding",
+      "description": "",
+      "type": "size",
+      "defaultValue": "3px"
+    },
+    {
+      "name": "gbc-MenuWidget-dropdown-padding-right",
+      "title": "Menu style popup right padding",
+      "description": "",
+      "type": "size",
+      "defaultValue": "12px"
+    },
+    {
+      "name": "gbc-MenuWidget-dropdown-text-padding-left",
+      "title": "Menu style popup text left padding when no image is defined",
+      "description": "",
+      "type": "size",
+      "defaultValue": "26px"
+    }
+  ]
+}

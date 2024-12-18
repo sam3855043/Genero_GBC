@@ -1,0 +1,38 @@
+{
+  "name": "mt-tabs",
+  "title": "Material tabs specific variables",
+  "description": "",
+  "type": "group",
+  "contents": [{
+      "name": "mt-tabs-margin-ratio",
+      "description": "Ratio applied to the margin or space around tabs",
+      "type": "number",
+      "defaultValue": "$theme-margin-ratio"
+    },
+    {
+      "name": "mt-tab-items-container-margin",
+      "title": "Tab item container margin",
+      "description": "Margin of the Folder widget's container element around the Page widget",
+      "type": "number",
+      "defaultValue": "$mt-tabs-margin-ratio * 6px"
+    },
+    {
+      "name": "mt-tabs-font-size-ratio",
+      "description": "",
+      "type": "number",
+      "defaultValue": "$theme-font-size-ratio"
+    },
+    {
+      "name": "mt-tabs-tab-z-index",
+      "description": "",
+      "type": "number",
+      "defaultValue": "$z-index-Normal"
+    },
+    {
+      "name": "mt-tabs-tab-current-z-index",
+      "description": "",
+      "type": "number",
+      "defaultValue": "$z-index-above-Normal"
+    }
+  ]
+}

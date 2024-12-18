@@ -1,0 +1,12 @@
+{
+  "name": "FileInputWidget",
+  "title": "File input specific variables",
+  "description": "",
+  "type": "group",
+  "contents": [{
+    "name": "gbc-FileInput-drop-color",
+    "description": "",
+    "type": "color",
+    "defaultValue": "$theme-primary-faded-background-color"
+  }]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "TimeEditWidget",
+  "title": "Time edit specific variables",
+  "description": "",
+  "type": "group",
+  "contents": [{
+      "name": "gbc-TimeEditWidget-margin-ratio",
+      "description": "Margin ratio for the TimeEdit widget",
+      "type": "number",
+      "defaultValue": "$theme-margin-ratio"
+    },
+    {
+      "name": "gbc-TimeEditWidget-font-family",
+      "description": "Font Family for the TimeEdit widget",
+      "type": "string",
+      "defaultValue": "$theme-font-family"
+    },
+    {
+      "name": "gbc-TimeEditWidget-color",
+      "description": "Icon color for the TimeEdit widget button",
+      "type": "color",
+      "defaultValue": "$theme-secondary-color"
+    },
+    {
+      "name": "gbc-TimeEditWidget-hover-color",
+      "description": "Text color when the TimeEdit widget is hovered",
+      "type": "color",
+      "defaultValue": "$theme-primary-faded-background-color"
+    }
+  ]
+}

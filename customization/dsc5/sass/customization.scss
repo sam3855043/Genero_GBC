@@ -1,0 +1,119 @@
+/*
+ * FOURJS_START_COPYRIGHT(D,2018)
+ * Property of Four Js*
+ * (c) Copyright Four Js 2018, 2024. All Rights Reserved.
+ * * Trademark of Four Js Development Tools Europe Ltd
+ *   in the United States and elsewhere
+ *
+ * This file can be modified by licensees according to the
+ * product manual.
+ * FOURJS_END_COPYRIGHT */
+
+@import "ColorPickerWidget";
+
+// Webkit custo of native scrollbars
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track:hover {
+  border: 1px solid $theme-primary-faded-background-color;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $theme-primary-faded-background-color;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+// IE custo of native scrollbars
+body {
+  scrollbar-face-color: $theme-primary-faded-background-color;
+  scrollbar-shadow-color: $theme-primary-faded-background-color;
+  scrollbar-arrow-color: $theme-separator-color;
+}
+
+// Highlight color custo
+::selection {
+  background-color: $theme-primary-faded-background-color; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background-color: $theme-primary-faded-background-color; /* Gecko Browsers */
+}
+
+// Tables custo
+.gbc_TableColumnsHeaders, .gbc_TableLeftColumnsHeaders, .gbc_TableRightColumnsHeaders {
+  height: 2.5em;
+  border-bottom: solid 1px $theme-separator-color;
+  margin-bottom: 8px;
+}
+
+.gbc_TableColumnsFooter {
+  border-top: solid 1px $theme-separator-color;
+}
+
+.gbc_TableColumnTitleWidget .headerText {
+  font-size: 12px !important;
+  font-weight: normal !important;
+  margin-left: 5px !important;
+}
+
+// Sidebar custo
+.gbc_ApplicationHostSidebarWidget .mt-sidebar-content {
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+  background-image: url('$$RES/img/logo_4js.png');
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-position: 50% 98%;
+}
+
+// Border widgets custo
+.gbc_GroupWidgetContainer, .mt-tabs[__FolderWidget], .gbc_TableWidget, .gbc_DropDownContainerWidget, .mt-dialog-pane, .gbc_CanvasWidget, .mt-card, .pika-select {
+  box-shadow: none !important;
+  border-radius: 2px;
+  border: solid 1px $theme-separator-color;
+}
+
+.mt-toolbar, .gbc_WindowWidget, .mt-button {
+  box-shadow: none !important;
+}
+
+.mt-field  {
+  box-shadow: none !important;
+  border-radius: 2px;
+  border: solid 1px $theme-separator-color;
+
+  &.gbc_Focus {
+    border: solid 1px $theme-separator-color;
+    border-bottom: solid 2px $theme-primary-emphasis-background-color !important;
+  }
+}
+
+.gbc_ButtonEditWidget, .gbc_DummyButtonEditWidget {
+  &.gbc_Focus > .gbc_EditWidget {
+    border: solid 1px $theme-separator-color;
+    border-bottom: solid 2px $theme-primary-emphasis-background-color !important;
+  }
+}
+
+ .gbc_ButtonWidget.gbc_Focus > .mt-button, .gbc_MenuWidget.disabled:not([interruptable-active]) .gbc_ButtonWidget.gbc_Focus > .mt-button {
+    background-color: #dddddd;
+ }
+ 
+ div.message-text {
+    color:black;
+ }
+
+ .mt-button[__ButtonWidget].mt-button.buttonType_link {
+    // color:black;
+ }

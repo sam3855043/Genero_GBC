@@ -1,0 +1,25 @@
+{
+  "name": "TextEditWidget",
+  "title": "Text edit specific variables",
+  "description": "",
+  "type": "group",
+  "contents": [{
+      "name": "gbc-TextEditWidget-margin-ratio",
+      "description": "",
+      "type": "number",
+      "defaultValue": "$theme-margin-ratio"
+    },
+    {
+      "name": "gbc-TextEditWidget-font-size-ratio",
+      "description": "",
+      "type": "number",
+      "defaultValue": "$theme-font-size-ratio"
+    },
+    {
+      "name": "gbc-TextEditWidget-capacity",
+      "description": "Define the capacity of the cache of global TextEditWidget. The capacity is the number of TextEditWidget that can be cached. If the capacity is reached, the oldest TextEditWidget is removed from the cache. The default value is 300.",
+      "type": "number",
+      "defaultValue": 300
+    }
+  ]
+}

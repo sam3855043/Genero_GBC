@@ -1,0 +1,48 @@
+{
+  "name": "GBC",
+  "version": "5.00.07",
+  "private": true,
+  "engines": {
+    "node": ">=20.8.1"
+  },
+  "scripts": {
+    "build": "gbc build",
+    "install-gbc": "node .build/scripts/install-gbc-global.js"
+  },
+  "dependencies": {
+    "@mdi/font": "7.3.67",
+    "connect-fonts-droidsans": "0.0.1",
+    "connect-fonts-droidsansmono": "0.0.1",
+    "dayjs": "1.11.10",
+    "i18next": "23.6.0",
+    "i18next-browser-languagedetector": "7.1.0",
+    "istanbul-lib-instrument": "6.0.0",
+    "javascript-state-machine": "2.4.0",
+    "js-base64": "3.7.5",
+    "jsface": "2.4.9",
+    "pikaday-time": "1.6.1",
+    "stackframe": "1.3.4",
+    "stacktrace-js": "2.0.2"
+  },
+  "devDependencies": {
+    "archiver": "4.0.2",
+    "autoprefixer": "10.4.2",
+    "chokidar": "3.5.3",
+    "commander": "11.1.0",
+    "del": "5.1.0",
+    "esm": "3.2.25",
+    "fs-extra": "9.0.1",
+    "longjohn": "0.2.12",
+    "postcss-discard-comments": "5.0.2",
+    "postcss-url-mapper": "1.2.0",
+    "sass": "1.77.6",
+    "terser": "5.22.0",
+    "tinycolor2": "1.6.0",
+    "winston": "3.13.0"
+  },
+  "peerDependencies": {
+    "postcss": "8.4.14"
+  },
+  "author": "Four Js Development Tools Europe Ltd",
+  "license": "UNLICENSED"
+}

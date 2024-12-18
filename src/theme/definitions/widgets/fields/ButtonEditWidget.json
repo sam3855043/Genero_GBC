@@ -1,0 +1,19 @@
+{
+  "name": "ButtonEditWidget",
+  "title": "Button edit specific variables",
+  "description": "",
+  "type": "group",
+  "contents": [{
+      "name": "gbc-ButtonEditWidget-default-height",
+      "description": "",
+      "type": "size",
+      "defaultValue": "$theme-field-default-height"
+    },
+    {
+      "name": "gbc-ButtonEditWidget-focus-border-color",
+      "description": "",
+      "type": "color",
+      "defaultValue": "$theme-primary-emphasis-background-color"
+    }
+  ]
+}

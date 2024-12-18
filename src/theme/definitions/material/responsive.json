@@ -1,0 +1,29 @@
+{
+  "name": "mt-responsive",
+  "title": "Material responsive specific variables",
+  "description": "",
+  "type": "group",
+  "contents": [{
+      "name": "mt-responsive-sidebar-always-visible-min-width",
+      "description": "Deprecated: show/hide sidebar",
+      "type": "size",
+      "deprecated": true,
+      "defaultValue": "$theme-sidebar-always-visible-min-width"
+    },
+    {
+      "name": "mt-responsive-sidebar-default-width",
+      "description": "Deprecated: sidebar size",
+      "type": "size",
+      "defaultValue": "$theme-sidebar-default-width",
+      "deprecated": true
+    },
+    {
+      "name": "mt-responsive-screen-width-breakpoint",
+      "title": "Phone and tablet width breakpoint (px number). Under that size we consider screen being on a phone.",
+      "description": "Deprecated: responsive breakpoint",
+      "type": "number",
+      "deprecated": true,
+      "defaultValue": 768
+    }
+  ]
+}

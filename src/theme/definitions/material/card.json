@@ -1,0 +1,25 @@
+{
+  "name": "mt-card",
+  "title": "Material card specific variables",
+  "description": "",
+  "type": "group",
+  "contents": [{
+      "name": "mt-card-margin-ratio",
+      "description": "Ratio applied to the margin or the space around elements in a card",
+      "type": "number",
+      "defaultValue": "$theme-margin-ratio"
+    },
+    {
+      "name": "mt-card-font-size-ratio",
+      "description": "",
+      "type": "number",
+      "defaultValue": "$theme-font-size-ratio"
+    },
+    {
+      "name": "mt-card-separator-color",
+      "description": "",
+      "type": "color",
+      "defaultValue": "$theme-separator-color"
+    }
+  ]
+}

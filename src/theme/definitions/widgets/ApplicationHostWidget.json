@@ -1,0 +1,30 @@
+{
+  "name": "application-host",
+  "title": "Application Host level specific variables",
+  "description": "Configure variables specific to Application Host",
+  "type": "group",
+  "contents": [
+    {
+      "name": "gbc-SessionSidebarWindowItemWidget-height",
+      "title": "Gbc SessionSidebarWindowItemWidget height",
+      "type": "size",
+      "defaultValue": "$theme-margin-ratio * 48px"
+    },
+    {
+      "name": "gbc-MainContainerWidget-z-index",
+      "title": "Gbc MainContainerWidget z-index",
+      "type": "number",
+      "defaultValue": "$z-index-under-Dialog"
+    },
+    {
+      "name": "gbc-LogPlayerWidget-header-background-color",
+      "type": "color",
+      "defaultValue": "$theme-disabled-background-color"
+    },
+    {
+      "name": "gbc-LogPlayerWidget-separator-color",
+      "type": "color",
+      "defaultValue": "$theme-separator-color"
+    }
+  ]
+}

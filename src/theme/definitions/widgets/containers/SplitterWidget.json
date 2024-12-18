@@ -1,0 +1,26 @@
+{
+  "name": "SplitterWidget",
+  "title": "Splitter specific variables",
+  "description": "",
+  "type": "group",
+  "contents": [{
+      "name": "gbc-SplitterWidget-hover-color",
+      "title": "SplitterWidget hover color",
+      "description": "",
+      "type": "color",
+      "defaultValue": "$theme-separator-color"
+    },
+    {
+      "name": "gbc-SplitterWidget-splitter-size",
+      "description": "",
+      "type": "size",
+      "defaultValue": "$theme-splitter-size"
+    },
+    {
+      "name": "gbc-SplitterWidget-splitholder-background-color",
+      "description": "SplitterWidget splitholder background color",
+      "type": "size",
+      "defaultValue": "$mt-white"
+    }
+  ]
+}

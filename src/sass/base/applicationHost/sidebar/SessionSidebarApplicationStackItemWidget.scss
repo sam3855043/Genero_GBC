@@ -1,0 +1,61 @@
+/*
+ * FOURJS_START_COPYRIGHT(D,2018)
+ * Property of Four Js*
+ * (c) Copyright Four Js 2018, 2024. All Rights Reserved.
+ * * Trademark of Four Js Development Tools Europe Ltd
+ *   in the United States and elsewhere
+ *
+ * This file can be modified by licensees according to the
+ * product manual.
+ * FOURJS_END_COPYRIGHT */
+
+.gbc_SessionSidebarApplicationStackItemWidget {
+  padding: 0.5em;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  height: $theme-sidebar-default-width - 6px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: flex-start;
+  background: var(--applistBackgroundColor);
+
+  &:hover{
+    filter: var(--applistHoverFilter);
+    cursor: pointer;
+  }
+  &.visible {
+    @include mt-title-visible;
+    border-left: 3px solid $theme-primary-background-color;
+  }
+
+  &.has-icon .applicationStackIcon{
+    padding-right: 0.9em;
+
+    img {
+      max-width: 37px;
+    }
+    svg {
+      width: 37px;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+  .applicationStackTitle{
+    flex: 1 0 auto;
+    align-self: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    width: 0;
+  }
+
+  .expanded &{
+    .applicationStackTitle{
+      display: -webkit-box!important;
+    }
+  }
+}

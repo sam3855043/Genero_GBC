@@ -1,0 +1,12 @@
+{
+  "name": "FilePickerWidget",
+  "title": "File picker specific variables",
+  "description": "",
+  "type": "group",
+  "contents": [{
+    "name": "gbc-FilePicker-selfdestroy-timeout",
+    "description": "Timeout (in seconds) after which the picker will free its file hooks. The purpose here is to prevent potential memory leaks if openfile(s) is called without a following getfile.",
+    "type": "number",
+    "defaultValue": 900
+  }]
+}

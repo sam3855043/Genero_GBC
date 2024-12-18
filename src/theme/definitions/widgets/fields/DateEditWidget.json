@@ -1,0 +1,37 @@
+{
+  "name": "DateEditWidget",
+  "title": "Date edit specific variables",
+  "description": "",
+  "type": "group",
+  "contents": [{
+      "name": "gbc-DateEdit-margin-ratio",
+      "description": "Margin ratio for the DateEdit widget",
+      "type": "number",
+      "defaultValue": "$theme-margin-ratio"
+    },
+    {
+      "name": "gbc-DateEdit-field-height-ratio",
+      "description": "Field height ratio for the DateEdit widget",
+      "type": "size",
+      "defaultValue": "$theme-field-height-ratio"
+    },
+    {
+      "name": "gbc-DateEdit-font-size-ratio",
+      "description": "Font size ratio for the dateedit widget",
+      "type": "number",
+      "defaultValue": "$theme-font-size-ratio"
+    },
+    {
+      "name": "gbc-DateEdit-color",
+      "description": "Icon color for the DateEdit widget button",
+      "type": "color",
+      "defaultValue": "$theme-secondary-color"
+    },
+    {
+      "name": "gbc-DateEdit-daysOff-color",
+      "description": "Defines the (faded) color of the Pikaday calendar disabled days defined in the presentation style attribute 'daysOff'",
+      "type": "color",
+      "defaultValue": "$theme-secondary-faded-color"
+    }
+  ]
+}

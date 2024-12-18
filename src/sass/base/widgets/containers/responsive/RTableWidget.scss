@@ -1,0 +1,826 @@
+/*
+ * FOURJS_START_COPYRIGHT(D,2020)
+ * Property of Four Js*
+ * (c) Copyright Four Js 2020, 2024. All Rights Reserved.
+ * * Trademark of Four Js Development Tools Europe Ltd
+ *   in the United States and elsewhere
+ *
+ * This file can be modified by licensees according to the
+ * product manual.
+ * FOURJS_END_COPYRIGHT */
+
+
+
+$tableRowBoundDefaultVisibility: hidden;
+
+@if ($gbc-TableWidget-rowBound-onEachRow ==true) {
+  $tableRowBoundDefaultVisibility: visible;
+}
+
+.gbc_RTableWidget {
+  --rowHeight: #{$theme-table-minimal-row-height}px;
+  --rowDecorationHeight: 0px;
+  --pageSize: 0;
+  --bufferSize: 0;
+  --visibleColumnCount: 0;
+  --size: 0;
+  --scrollTop: 0;
+  --currentRowColor: #{$gbc-TableWidget-currentRow-color};
+  --currentRowBackgroundColor: #{$gbc-TableWidget-currentRow-background-color};
+  --scrollBarHorizontalHeight: 0;
+  --scrollBarVerticalWidth: 0;
+  --rowActiveFilter: contrast(82%);
+  --rowHoverFilter: var(--themeHoverFilter);
+
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  @include mt-card-border;
+  padding: $gbc-TableWidget-padding;
+  margin: $gbc-TableWidget-margin;
+  background-color: $gbc-TableWidget-field-background-color;
+
+  /* Save the theme colors to be able to fallback to it in JS */
+  --default-highlightBackgroundColor : #{$gbc-TableWidget-unfocused-currentRow-background-color};
+  --default-highlightFocusedBackgroundColor : #{$gbc-TableWidget-currentRow-background-color};
+  --highlightBackgroundColor: var(--default-highlightBackgroundColor);
+
+  --default-highlightColor : #{$gbc-TableWidget-unfocused-currentRow-color};
+  --default-highlightFocusedColor : #{$gbc-TableWidget-currentRow-color};
+  --highlightColor: var(--default-highlightColor);
+
+  flex: 1 0 auto;
+  cursor: default;
+  user-select: none;
+
+
+  &.disabled {
+    --size: var(--pageSize) !important; // when table is disabled consider size = pageSize to avoid useless vertical scrollbar
+  }
+
+  &.gbc_Focus {
+    --highlightColor: var(--default-highlightFocusedColor);
+    --highlightBackgroundColor: var(--default-highlightFocusedBackgroundColor);
+  }
+
+  &:not(.inputMode) .mt-field.disabled {
+    background-color: transparent; // force transparent background for disable field
+  }
+
+  &.rowHover>.gbc_TableDataGroup>.gbc_RTableRowWidget:hover {
+    filter: var(--rowHoverFilter);
+
+    >.gbc_RTableItemWidget {
+      filter: inherit;
+    }
+  }
+
+  .scroller_y {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 1px;
+    height: calc(var(--size) * var(--rowHeight));
+  }
+
+  .scroller_x {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 1px;
+    width: 0;
+  }
+
+  .gbc_TableHeaderGroup>.scroller_x,
+  .gbc_TableFooterGroup>.scroller_x {
+    overflow: hidden;
+  }
+
+  .g_measuring &.g_measureable {
+    .gbc_TableDataGroup {
+      height: 0; // during g_measuring table height must not grow to not change the vertical scroll value
+    }
+
+    .gbc_RTableItemWidget {
+      >.gbc_WidgetBase_in_array {
+        width: auto !important;
+        height: auto !important;
+      }
+    }
+  }
+
+  .g_TableMeasuring {
+    position: absolute;
+    left: -10000px;
+    top: -10000px;
+    width: auto !important;
+    height: auto !important;
+
+    .gbc_WidgetBase_in_array {
+      width: auto !important;
+      height: auto !important;
+    }
+  }
+
+  >.gbc_TableDataGroup>.gbc_RTableRowWidget {
+
+    >.gbc_RowBoundDecoratorWidget {
+      --rowBoundVisibility: #{$tableRowBoundDefaultVisibility};
+    }
+
+    &:hover>.gbc_RowBoundDecoratorWidget {
+      --rowBoundVisibility: visible;
+    }
+  }
+
+  .gbc_RTableItemSelectionArea {
+    @include fill-absolute;
+    background-color: $gbc-TableWidget-hover-color;
+    border: solid 2px var(--default-highlightFocusedBackgroundColor);
+    border-radius: 2px;
+    opacity: 0.3;
+  }
+  .inClipboard {
+    border: none;
+    width: max-content;
+    background: 
+        linear-gradient(90deg, var(--default-highlightFocusedBackgroundColor) 50%, transparent 0) repeat-x,
+        linear-gradient(90deg, var(--default-highlightFocusedBackgroundColor) 50%, transparent 0) repeat-x,
+        linear-gradient(0deg, var(--default-highlightFocusedBackgroundColor) 50%, transparent 0) repeat-y,
+        linear-gradient(0deg, var(--default-highlightFocusedBackgroundColor) 50%, transparent 0) repeat-y;
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 15px 2px, 15px 2px, 2px 15px, 2px 15px;
+    padding: 10px;
+    animation: border-dance 15s infinite linear;
+  }
+  @keyframes border-dance {
+    0% {
+      background-position: 0 0, 100% 100%, 0 100%, 100% 0;
+    }
+    100% {
+      background-position: 100% 0, 0 100%, 0 0, 100% 100%;
+    }
+  }
+}
+
+
+
+.gbc_RTableItemWidget {
+  --order: initial;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  overflow: hidden;
+  order: var(--order);
+
+  .mt-field {
+    box-shadow: none;
+    border: none;
+    background-color: transparent;
+  }
+
+  >.gbc_WidgetBase_in_array {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1 1 auto;
+
+    &.gbc_Focus {
+      outline: none;
+      border: $gbc-TableWidget-focused-cell-border-width solid $gbc-TableWidget-focus-border-color;
+      border-radius: 0.2rem;
+    }
+  }
+
+  .gbc_RadioGroupWidget {
+    display: block; // necessary for vertical radiogroup widget
+  }
+
+  .gbc_ComboBoxWidget {
+
+    &.disabled,
+    &.readonly {
+      .zmdi.toggle {
+        display: none;
+      }
+    }
+  }
+}
+
+// classic table
+.gbc_RTableWidget[viewType="classic"] {
+  --headerHeight: 2.5em;
+
+  .gbc_TableDataGroup .gbc_RTableRowWidget:active>.gbc_RTableItemWidget {
+    filter: var(--rowActiveFilter);
+    transition: filter 10ms;
+  }
+
+  &.showGridY .gbc_RTableItemWidget {
+    border-right: solid 1px $gbc-TableWidget-inner-border-color;
+  }
+
+  &.showGridX .gbc_RTableItemWidget {
+    border-bottom: solid 1px $gbc-TableWidget-inner-border-color;
+  }
+
+  &.headerHidden .gbc_TableHeaderGroup {
+    display: none;
+  }
+
+  .gbc_RTableItemWidget {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .gbc_TableFooterGroup {
+    position: relative;
+    flex: 0 0 auto;
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: var(--gridTemplateColumns);
+    border-top: 2px solid $gbc-TableWidget-inner-border-color;
+    padding: $gbc-TableWidget-items-horizontalPadding 0;
+    margin-right: var(--scrollBarVerticalWidth);
+
+    .gbc_RTableRowWidget {
+      display: contents;
+
+      >.gbc_TableAggregateGlobalText {
+        position: absolute;
+      }
+
+      >.gbc_LabelWidget {
+        padding: 0;
+      }
+    }
+  }
+
+  .gbc_TableHeaderGroup {
+    flex: 0 0 auto;
+    display: grid;
+    position: relative;
+    overflow: hidden;
+    grid-template-columns: var(--gridTemplateColumns);
+    min-height: var(--headerHeight);
+    background-color: $gbc-TableWidget-header-color;
+    border-bottom: 2px solid $gbc-TableWidget-inner-border-color;
+    margin-right: var(--scrollBarVerticalWidth);
+    border-radius: 0.2rem 0.2rem 0 0;
+
+    .gbc_RTableRowWidget {
+      display: contents;
+
+      .left_spacer {
+        display: flex;
+        flex-direction: row;
+        min-width: auto;
+        order: 0;
+      }
+
+      .rightFrozen+*+.gbc_RowBoundDecoratorWidget {
+        background-color: $gbc-TableWidget-inner-border-color;
+
+        &:hover {
+          filter: none;
+        }
+      }
+    }
+
+    .gbc_RTableColumnWidget {
+      display: flex;
+      overflow: hidden;
+      align-self: stretch;
+      align-items: center;
+      padding-top: $gbc-TableWidget-items-verticalPadding;
+      padding-bottom: $gbc-TableWidget-items-horizontalPadding;
+      padding-left: $gbc-TableWidget-items-horizontalPadding;
+      cursor: pointer;
+      text-align: left;
+
+      &.drop-target-after {
+        border-right: var(--dropTargetBorder);
+      }
+
+      &.drop-target-before {
+        border-left: var(--dropTargetBorder);
+      }
+
+      .headerText {
+        @include mt-title;
+        flex: 1 1 0px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: pre;
+        height: 100%;
+        line-height: 200%;
+      }
+
+      .resizer {
+        flex: 0 0 auto;
+        width: 6px;
+        height: 1em;
+        border-right: solid 1px $gbc-TableWidget-inner-border-color;
+        cursor: ew-resize;
+
+        @media (max-width: 600px) {
+          width: 12px;
+        }
+
+        &.unresizable {
+          cursor: default;
+        }
+      }
+
+      &.sort-asc,
+      &.sort-desc {
+        &::before {
+          order: -2;
+          opacity: 0.3;
+          content: "\2191";
+        }
+
+        &::after {
+          order: -1;
+          opacity: 0.3;
+          content: "\2193";
+          margin-right: 0.2rem;
+        }
+      }
+
+      &.sort-asc::before,
+      &.sort-desc::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  // No multiRowSelection: current row background is blue
+  &:not(.multiRowSelection) {
+
+    // cells in the currentRow but not in currentColumn
+    &.gbc_highlightCurrentRow .gbc_TableDataGroup .gbc_RTableRowWidget.currentRow>.gbc_RTableItemWidget:not(.currentColumn),
+    // only the current cell (in current row and current column)
+    &.gbc_highlightCurrentCell .gbc_TableDataGroup .gbc_RTableRowWidget.currentRow>.gbc_RTableItemWidget.currentColumn {
+      background-color: var(--highlightBackgroundColor) !important;
+      color: var(--highlightColor) !important;
+      fill: var(--highlightColor) !important;
+
+      .mt-field,
+      .mt-label,
+      .gbc_CheckBoxWidget,
+      //
+      .gbc_RadioGroupWidget,
+      // Needed for composite widgets
+      .gbc_ButtonEditWidget {
+        //
+        color: inherit !important;
+        fill: inherit !important;
+      }
+    }
+  }
+
+  // multiRowSelection: no current row back color but grey border and back color for selected rows
+  &.multiRowSelection .gbc_TableDataGroup .gbc_RTableRowWidget {
+    &.currentRow>.gbc_RTableItemWidget {
+      border-top: solid 1px $gbc-TableWidget-mrs-border-color;
+      border-bottom: solid 1px $gbc-TableWidget-mrs-border-color;
+    }
+
+    &.selectedRow>.gbc_RTableItemWidget {
+      // Important is mandatory in the case that the background of the rows are defined in the 4ST
+      background-color: var(--highlightBackgroundColor) !important;
+      color: var(--highlightColor) !important;
+      fill: var(--highlightColor) !important;
+
+      .mt-field,
+      .mt-label {
+        color: inherit;
+        fill: inherit;
+      }
+    }
+  }
+
+  .gbc_RTableItemWidget.gbc_RowBoundDecoratorWidget {
+    position: sticky;
+    right: 0;
+    overflow: visible;
+    z-index: 2;
+
+    >span {
+      transform: none;
+      -webkit-transform: none;
+    }
+  }
+
+  .gbc_TableDataGroup {
+    display: grid;
+    position: relative;
+    overflow: scroll;
+    flex: 1 1 auto;
+    grid-template-columns: var(--gridTemplateColumns);
+    --templateRowsCount: max(1, min(var(--bufferSize), var(--size)));
+    grid-template-rows: repeat(var(--templateRowsCount), var(--rowHeight));
+    background-color: inherit;
+
+    .gbc_RTableRowWidget {
+      display: contents;
+      background-color: inherit;
+
+      &:nth-child(even)>.gbc_WidgetBase_in_array {
+        background-color: var(--evenRowBackgroundColor, inherit);
+      }
+
+      &:nth-child(odd)>.gbc_WidgetBase_in_array {
+        background-color: var(--oddRowBackgroundColor, inherit);
+      }
+
+      .left_spacer {
+        display: flex;
+        flex-direction: row;
+        min-width: auto;
+        transform: translateY(var(--scrollTop));
+      }
+
+      .gbc_RTableItemWidget {
+        overflow: hidden;
+        margin: 0;
+        min-width: auto;
+        text-overflow: ellipsis;
+        transform: translateY(var(--scrollTop));
+
+        &.drop-target-before {
+          border-top: var(--dropTargetBorder);
+        }
+
+        &.drop-target-after {
+          border-bottom: var(--dropTargetBorder);
+        }
+
+        >.gbc_WidgetBase {
+          order: 2;
+          width: 0; // to be sure that widget can stretch
+          // Equivalent to : $theme-margin-ratio * $theme-margin-ratio * 10px
+          padding: $gbc-TableWidget-margin-ratio*$gbc-TableWidget-table-margin;
+          height: 100%;
+        }
+
+        >.gbc_ImageWidget {
+          position: initial;
+          display: block;
+          overflow: hidden;
+          max-height: var(--rowHeight);
+          box-shadow: none;
+
+          &>img {
+            height: 100%;
+          }
+
+          &>svg {
+            vertical-align: middle;
+          }
+
+          &.gbc_fixedSvg {
+            padding-left: 0;
+            padding-right: 0;
+          }
+        }
+
+        .gbc_RTableItemImage {
+          order: 1;
+          flex: 0 0 auto;
+          width: var(--rowHeight) !important;
+          height: var(--rowHeight) !important;
+        }
+
+        .gbc_TreeAnchor {
+          @extend .zmdi;
+
+          &.treeExpanded {
+            @extend .zmdi-#{$gbc-TableWidget-treeview-expanded-icon};
+          }
+
+          &.treeCollapsed {
+            @extend .zmdi-#{$gbc-TableWidget-treeview-collapsed-icon};
+          }
+
+          &.treeLeaf {
+            @extend .zmdi-#{$gbc-TableWidget-treeview-leaf-icon};
+          }
+
+          order: 0;
+          transform: none;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          width: $gbc-TableWidget-font-size-ratio*30px;
+          text-align: center;
+          font-size: 1.4em;
+          // Equivalent to : $theme-margin-ratio * $theme-margin-ratio * 10px
+          padding-left: $gbc-TableWidget-margin-ratio*$gbc-TableWidget-table-margin;
+        }
+      }
+    }
+  }
+
+  .leftFrozen {
+    position: sticky;
+    left: 0;
+    overflow: hidden;
+    z-index: 2;
+
+    &.lastLeftFrozen {
+      border-right: 2px solid $gbc-TableWidget-inner-border-color;
+    }
+
+    &.gbc_RTableColumnWidget {
+      background-color: $gbc-TableWidget-inner-border-color;
+
+      &.lastLeftFrozen {
+        border-radius: 0 0.2rem 0 0;
+      }
+    }
+  }
+
+  .rightFrozen {
+    position: sticky;
+    right: 0;
+    overflow: hidden;
+    z-index: 2;
+
+    &.firstRightFrozen {
+      border-left: 2px solid $gbc-TableWidget-inner-border-color;
+    }
+
+    &.gbc_RTableColumnWidget {
+      background-color: $gbc-TableWidget-inner-border-color;
+
+      &.firstRightFrozen {
+        border-radius: 0.2rem 0 0 0;
+      }
+    }
+  }
+
+  .scroller_x {
+    width: var(--scrollWidth);
+  }
+}
+
+/* flipped table
+ * All hard coded values, like padding, gap, margin ...
+ * comes from Material Design : https://m3.material.io/components/lists/specs
+ * @todo : Think how to factorise the maximum of code between the multiple types of flipped table.
+ * Using display:contents on the gbc_RTableItem, alowing to generate a coherent grid display
+ */
+.gbc_RTableWidget[viewType="flipped"] {
+  --rowHeight: 100px;
+  --thumbnailWidth: 0px;
+  --imageColumnWidth: 0px;
+  --headerWidth: 1fr;
+  --dataWidth: minmax(66%, 100%);
+  --rowboundWidth: 0px;
+
+  --default-highlightColor: inherit;
+  --default-highlightFocusedColor: inherit;
+
+  .gbc_ImageWidget {
+    svg {
+      max-height: 100%;
+      max-width: 100%;
+      height: auto;
+      width: auto;
+      cursor: default;
+      user-select: none;
+    }
+  }
+
+  .gbc_TableHeaderGroup,
+  .gbc_TableFooterGroup {
+    display: none;
+  }
+
+  &.headerHidden .gbc_RTableRowWidget {
+    --headerWidth: 0;
+
+    >.gbc_RTableItemWidget::before {
+      visibility: collapse;
+    }
+  }
+
+  >.gbc_TableDataGroup {
+    position: relative;
+    display: block;
+    flex: 1 1 auto;
+    overflow-y: auto;
+
+    .scroller_y {
+      // As there is no space between rows in rowAspect list
+      height: calc((var(--size)) * (var(--rowHeight) + var(--rowDecorationHeight)));
+    }
+
+    >.gbc_RTableRowWidget {
+      display: grid;
+      grid-auto-flow: row;
+      grid-template-columns: var(--thumbnailWidth) var(--imageColumnWidth) var(--headerWidth) var(--dataWidth) var(--rowBoundWidth);
+      align-content: start;
+      align-items: start;
+      gap: 0px $gbc-TableWidget-items-verticalPadding;
+
+      box-sizing: content-box;
+
+
+      background-color: $gbc-TableWidget-odd-row-background-color;
+
+      height: var(--rowHeight);
+      transform: translateY(var(--scrollTop));
+
+      &:active {
+        filter: var(--rowActiveFilter);
+        transition: filter 10ms;
+      }
+
+      >.left_spacer {
+        display: none;
+        visibility: collapse;
+      }
+
+      >.gbc_RTableItemWidget {
+        display: contents;
+
+        // Column header
+        &::before {
+          content: attr(data-header);
+          align-self: center;
+          color: $theme-secondary-faded-color;
+
+          white-space: nowrap;
+
+          grid-column: 3;
+          order: calc(var(--order) + 3);
+        }
+
+        >.gbc_WidgetBase_in_array {
+          box-sizing: border-box;
+          display: flex !important;
+          align-items: stretch !important;
+
+          grid-column: 4;
+          order: calc(var(--order) + 4);
+
+          &.gbc_RTableItemImage {
+            width: auto;
+
+            grid-column: 2;
+            order: calc(var(--order) + 2);
+          }
+        }
+
+        &.gbc_RowBoundDecoratorWidget {
+          // Force flex again so it's not affected by contents
+          display: flex;
+          align-items: center;
+
+          grid-row: 1;
+          grid-column: 5;
+
+          &::before {
+            content: none;
+          }
+        }
+      }
+    }
+
+    >.gbc_RTableRowWidget:has(>.gbc_RTableItemWidget>.gbc_RTableItemImage) {
+      --imageColumnWidth: 2em;
+    }
+  }
+
+  // multiRowSelection: no current row back color but blue left border and back color for selected rows
+  &.multiRowSelection .gbc_TableDataGroup .gbc_RTableRowWidget {
+    &.selectedRow {
+      background-color: $gbc-TableWidget-unfocused-currentRow-background-color;
+      color: $gbc-TableWidget-unfocused-currentRow-color;
+      fill: $gbc-TableWidget-unfocused-currentRow-color;
+    }
+  }
+
+  &.gbc_highlightCurrentRow>.gbc_TableDataGroup>.gbc_RTableRowWidget.currentRow {
+    color: var(--highlightColor);
+    fill: var(--highlightColor);
+
+    >.gbc_WidgetBase_in_array {
+      color: inherit;
+      fill: inherit;
+    }
+  }
+}
+
+.gbc_RTableWidget[viewType="flipped"].gbc_rowAspect_default {
+
+  &.gbc_highlightCurrentRow {
+    &:not(.multiRowSelection) {
+      --default-highlightColor: #{$gbc-TableWidget-unfocused-currentRow-color};
+      --default-highlightFocusedColor: #{$gbc-TableWidget-currentRow-color};
+
+      >.gbc_TableDataGroup>.gbc_RTableRowWidget.currentRow {
+        background-color: var(--highlightBackgroundColor);
+
+        >.gbc_RTableItemWidget::before {
+          color: inherit;
+        }
+      }
+    }
+
+    &.multiRowSelection>.gbc_TableDataGroup>.gbc_RTableRowWidget.currentRow {
+      border-color: var(--highlightBackgroundColor);
+      border-width: 2px;
+      border-style: solid;
+    }
+  }
+
+  >.gbc_TableDataGroup>.gbc_RTableRowWidget {
+    @include mt-card-border;
+
+    margin-bottom: calc($gbc-TableWidget-items-verticalPadding * 2);
+    margin-right: $gbc-TableWidget-items-horizontalPadding;
+    margin-left: $gbc-TableWidget-items-horizontalPadding;
+    padding: calc($gbc-TableWidget-items-verticalPadding * 3) $gbc-TableWidget-items-horizontalPadding;
+
+    >.gbc_RTableItemWidget>.gbc_WidgetBase_in_array {
+      background-position-x: right !important;
+
+      justify-content: end !important;
+
+      text-align: end !important;
+
+      --composedWidgetJustify: flex-end;
+    }
+
+  }
+}
+
+.gbc_RTableWidget[viewType="flipped"].gbc_rowAspect_list {
+
+  >.gbc_TableDataGroup>.gbc_RTableRowWidget {
+
+    border-top: 1px solid $gbc-TableWidget-border-color;
+
+    &:first-child {
+      border-top: none;
+      padding-top: calc($gbc-TableWidget-items-verticalPadding * 4);
+    }
+
+    &::before {
+      @include mt-list-current-row-indicator;
+
+      position: absolute;
+      bottom: 0;
+      right: 0;
+
+      background-color: var(--highlightBackgroundColor);
+
+      visibility: hidden;
+    }
+
+    /* 
+       * Multiply the vertical padding to match default flipped view row height.
+       * And remove the border width 
+       */
+    padding-top: calc(($gbc-TableWidget-items-verticalPadding * 4) - 1px);
+    padding-bottom: calc($gbc-TableWidget-items-verticalPadding * 4);
+    padding-right: $gbc-TableWidget-items-horizontalPadding;
+    padding-left: calc($gbc-TableWidget-items-horizontalPadding * 2);
+
+    >.gbc_RTableItemWidget {
+
+      >.gbc_WidgetBase_in_array {
+        background-position-x: left !important;
+
+        justify-content: start !important;
+
+        text-align: start !important;
+      }
+
+      &:first-child>.gbc_WidgetBase_in_array.gbc_RTableItemImage {
+        grid-row: 1 / var(--visibleColumnCount);
+        grid-column: 1;
+        order: calc(var(--order) + 1);
+        /* override default image widget behavior 
+        * to respect material design standards
+        */
+        background-position: center top !important;
+      }
+    }
+  }
+
+  /* If there is an image column on the first item of the row, use it as a thumbnail */
+  &:has(.gbc_RTableItemWidget:first-child>.gbc_RTableItemImage) {
+    --thumbnailWidth: min(var(--rowHeight), 25%);
+  }
+
+  /* Show the highlight indicator */
+  &.gbc_highlightCurrentRow>.gbc_TableDataGroup>.gbc_RTableRowWidget.currentRow::before {
+    visibility: visible;
+  }
+}

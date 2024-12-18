@@ -1,0 +1,161 @@
+/*
+ * FOURJS_START_COPYRIGHT(D,2018)
+ * Property of Four Js*
+ * (c) Copyright Four Js 2018, 2024. All Rights Reserved.
+ * * Trademark of Four Js Development Tools Europe Ltd
+ *   in the United States and elsewhere
+ *
+ * This file can be modified by licensees according to the
+ * product manual.
+ * FOURJS_END_COPYRIGHT */
+
+$scrollGridRowBoundDefaultVisibility: hidden;
+
+@if ($gbc-ScrollGridWidget-rowBound-onEachRow ==true) {
+  $scrollGridRowBoundDefaultVisibility: visible;
+}
+
+/** 
+@Important 
+
+The color management is a bit overengineerer
+**/
+
+.gbc_StretchableScrollGridLineWidget {
+  display: inline-flex;
+
+  &.highlight.currentRow {
+    .gbc_RowBoundDecoratorWidget {
+      color: var(--highlightColor);
+    }
+  }
+
+  &:hover {
+    filter: var(--hover-color);
+
+    .gbc_RowBoundDecoratorWidget {
+      --rowBoundVisibility: visible;
+    }
+  }
+
+  >.containerElement {
+    flex-grow: 1;
+  }
+
+  /* ROW BOUND */
+  .gbc_RowBoundDecoratorWidget {
+    --rowBoundVisibility: #{$scrollGridRowBoundDefaultVisibility};
+    align-items: baseline;
+    flex-direction: row-reverse;
+    z-index: 10;
+
+    >span {
+      padding-top: $theme-margin-ratio * 12px;
+    }
+  }
+}
+
+.gbc_StretchableScrollGridWidgetBase {
+  /* Save the theme colors to be able to fallback to it in JS */
+  --default-highlightBackgroundColor : #{$gbc-ScrollGridWidget-current-background-color};
+  --highlightBackgroundColor: var(--default-highlightBackgroundColor);
+
+  --default-highlightColor : #{$gbc-ScrollGridWidget-current-color};
+  --highlightColor: var(--default-highlightColor);
+
+  --marginRatio : #{$gbc-ScrollGridWidget-margin-ratio};
+
+  @include fill-absolute;
+
+  .g_measuring & .gbc_RowBoundDecoratorWidget .zmdi {
+    display: none;
+  }
+
+
+  >.containerElement {
+    display: flex;
+  }
+
+  &.gbc_highlightCurrentRow .gbc_StretchableScrollGridLineWidget.currentRow .currentRow {
+    color: var(--highlightColor);
+    fill: var(--highlightColor);
+  }
+
+  &.gbc_highlightCurrentCell {
+
+    &.gbc_focusOnField .gbc_StretchableScrollGridLineWidget.currentRow .currentRow {
+
+      &.gbc_Focus {
+        background-color: var(--highlightBackgroundColor);
+        color: var(--highlightColor);
+        fill: var(--highlightColor);
+      }
+    }
+
+    &:not(.gbc_focusOnField) .gbc_StretchableScrollGridLineWidget.currentRow .gbc_WidgetBase {
+
+      &.disabled {
+        background-color: var(--highlightBackgroundColor) !important;
+        color: var(--highlightColor) !important;
+        fill: var(--highlightColor) !important;
+      }
+
+      &.gbc_Focus.currentRow {
+        background-color: var(--highlightBackgroundColor) !important;
+        color: var(--highlightColor) !important;
+        fill: var(--highlightColor) !important;
+      }
+    }
+  }
+
+
+  /* ROW ASPECT DEFAULT*/
+  &.gbc_rowAspect_default {
+    >.containerElement>.gbc_StretchableScrollGridLineWidget {
+      margin-bottom: var(--marginRatio);
+    }
+
+    &.gbc_highlightCurrentRow>.containerElement>.gbc_StretchableScrollGridLineWidget {
+      &.currentRow {
+        background-color: var(--highlightBackgroundColor);
+
+        >.containerElement>.g_GridElement>.currentRow {
+          background-color: var(--highlightBackgroundColor);
+        }
+      }
+    }
+  }
+
+  /* ROW ASPECT LIST*/
+  &.gbc_rowAspect_list {
+    >.containerElement>.gbc_StretchableScrollGridLineWidget {
+      margin-bottom: 0;
+
+      &>.containerElement {
+        margin: var(--marginRatio);
+        margin-left: calc(var(--marginRatio)*2);
+      }
+
+      &::before {
+        @include mt-list-current-row-indicator;
+        background-color: var(--highlightBackgroundColor);
+        visibility: hidden;
+      }
+    }
+
+    &.gbc_highlightCurrentRow {
+      --default-highlightColor: inherit;
+
+      >.containerElement>.gbc_StretchableScrollGridLineWidget {
+        &.currentRow::before {
+          visibility: visible;
+        }
+      }
+    }
+
+    &.gbc_highlightCurrentCell.gbc_highlightCurrentRow {
+      // Redefine the rule to avoid .gbc_highlightCurrentCell being override
+      --default-highlightColor : #{$gbc-ScrollGridWidget-current-color};
+    }
+  }
+}

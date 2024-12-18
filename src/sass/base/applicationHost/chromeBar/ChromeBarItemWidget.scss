@@ -1,0 +1,172 @@
+/*
+ * FOURJS_START_COPYRIGHT(D,2018)
+ * Property of Four Js*
+ * (c) Copyright Four Js 2018, 2024. All Rights Reserved.
+ * * Trademark of Four Js Development Tools Europe Ltd
+ *   in the United States and elsewhere
+ *
+ * This file can be modified by licensees according to the
+ * product manual.
+ * FOURJS_END_COPYRIGHT */
+
+
+.gbc_ChromeBarItemWidget {
+  cursor: pointer;
+
+  opacity: 0.99; // Hack to prevent css layout to break on long texts
+
+  &:hover{
+    opacity: 0.8;
+  }
+  .gbc_ImageWidget svg:hover{
+    cursor: pointer;
+  }
+
+  // Items in Chrome Top Bar only
+  .gbc_ChromeBarWidget & {
+    white-space: nowrap;
+
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    padding-left: calc($gbc-ChromeBarWidget-item-spacing / 2);
+    padding-right: calc($gbc-ChromeBarWidget-item-spacing / 2);
+
+    &.disabled {
+      opacity: 0.3;
+      cursor: default!important;
+    }
+
+     &.disabled .gbc_ImageWidget svg:hover{
+      cursor: default!important;
+    }
+
+    &.hasImage .text {
+      display: none;
+    }
+
+    .gbc_imageContainer {
+      .gbc_ImageWidget.gbc_fixedSvg > svg {
+        width: $gbc-ChromeBarWidget-item-height;
+        height: $gbc-ChromeBarWidget-item-height;
+      }
+      .gbc_ImageWidget:not(.svg){
+
+        img{
+          max-height: $gbc-ChromeBarWidget-item-height;
+          max-width: $gbc-ChromeBarWidget-item-height;
+        }
+        .zmdi {
+          font-size: $gbc-ChromeBarWidget-item-height;
+        }
+      }
+
+      .gbc_ImageWidget.svg{
+        img{
+          height: $gbc-ChromeBarWidget-item-height;
+          width: $gbc-ChromeBarWidget-item-height;
+        }
+        .zmdi {
+          //font-size: 1.4em;
+          font-size: $gbc-ChromeBarWidget-item-height;
+        }
+      }
+    }
+  }
+
+  // Items in Chrome Right Bar only
+  .gbc_ChromeRightBarWidget & {
+    height: $gbc-ChromeBarWidget-right-item-height;
+    font-size: 1.2em;
+    padding-left: $gbc-ChromeBarWidget-right-item-margin ;
+    padding-right: $gbc-ChromeBarWidget-right-item-margin ;
+
+    .is-not-mobile-device & {
+      .gbc_ImageWidget{
+        height: inherit;
+        width: inherit;
+      }
+    }
+
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    text{
+      white-space: nowrap;
+    }
+
+    &.disabled{
+      opacity: 0.3;
+      cursor: default!important;
+    }
+    &.disabled .gbc_ImageWidget svg:hover{
+      cursor: default!important;
+    }
+
+
+    .gbc_imageContainer {
+      width: $gbc-ChromeBarWidget-item-height;
+      height: $gbc-ChromeBarWidget-item-height;
+      margin-right: $gbc-ChromeBarWidget-right-item-image-margin;
+      display: flex;
+      align-items: center;
+
+      .gbc_ImageWidget {
+        &.gbc_fixedSvg > svg {
+          fill:  $theme-primary-background-color;
+          width: $gbc-ChromeBarWidget-item-height;
+          height: $gbc-ChromeBarWidget-item-height;
+        }
+      }
+    }
+  }
+
+    &.gbc_ChromeBarItemDebugWidget,
+    &.gbc_ChromeBarItemRunInGDCWidget,
+    &.gbc_ChromeBarItemProxyLogWidget,
+    &.gbc_ChromeBarItemVMLogWidget {
+      display: flex;
+    }
+
+  &.gbc_ChromeBarItemUploadStatusWidget{
+    display: none;
+    opacity: 0;
+    cursor: default;
+    &:hover{
+      cursor: default;
+    }
+    &.processing{
+      display: inherit;
+      opacity: 0.7;
+    }
+  }
+
+
+  &.gbc_ChromeBarItemCloseWidget{
+    &[processing]{
+      cursor: wait !important;
+      a {
+        cursor: wait !important;
+      }
+    }
+  }
+
+
+  &.error:after{
+    content: mdi("exclamation");
+    color: $gbc-ChromeBarWidget-item-error-color;
+    position: absolute;
+    margin-left: 14px;
+    margin-top: -5px;
+    font-size: 14px;
+    font-family: "Material Design Icons", sans-serif;
+  }
+
+}
+
+// Display chromebarItem in measuring pass to calculate raw width
+.g_measuring .gbc_ChromeBarItemWidget{
+  display: flex;
+}
+

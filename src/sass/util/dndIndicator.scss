@@ -1,0 +1,51 @@
+/*
+ * FOURJS_START_COPYRIGHT(D,2024)
+ * Property of Four Js*
+ * (c) Copyright Four Js 2024, 2024. All Rights Reserved.
+ * * Trademark of Four Js Development Tools Europe Ltd
+ *   in the United States and elsewhere
+ *
+ * This file can be modified by licensees according to the
+ * product manual.
+ * FOURJS_END_COPYRIGHT */
+
+.gbc_dndIndicator {
+  --lineWidth: 100px;
+  --lineTop: 0;
+  --lineLeft: 0;
+  --lineVisibility: visible;
+
+  --boxWidth: 100px;
+  --boxHeight: 0px;
+  --boxLeft: 0;
+  --boxTop: 0;
+  --thickBox: 0;
+  --boxVisibility: hidden;
+
+  pointer-events: none;
+
+  >.insertLine {
+    position: absolute;
+    width: var(--lineWidth);
+    height: 0;
+    border-bottom: 2px solid $theme-primary-background-color;
+    left: var(--lineLeft);
+    top: var(--lineTop);
+    z-index: $z-index-above-DropDown;
+    pointer-events: inherit;
+    visibility: var(--lineVisibility);
+  }
+
+  >.appendBox {
+    position: absolute;
+    width: var(--boxWidth);
+    height: var(--boxHeight);
+    border: calc(1px + (var(--thickBox) * 1px)) solid $theme-primary-background-color;
+    border-radius: 4px;
+    left: var(--boxLeft);
+    top: var(--boxTop);
+    z-index: $z-index-above-DropDown;
+    visibility: var(--boxVisibility);
+    pointer-events: inherit;
+  }
+}

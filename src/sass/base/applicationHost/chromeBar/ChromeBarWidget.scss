@@ -1,0 +1,164 @@
+/*
+ * FOURJS_START_COPYRIGHT(D,2018)
+ * Property of Four Js*
+ * (c) Copyright Four Js 2018, 2024. All Rights Reserved.
+ * * Trademark of Four Js Development Tools Europe Ltd
+ *   in the United States and elsewhere
+ *
+ * This file can be modified by licensees according to the
+ * product manual.
+ * FOURJS_END_COPYRIGHT */
+
+.gbc_ChromeBarWidget.mt-toolbar > *, .gbc_ChromeBarWidget.mt-toolbar {
+  height: $gbc-ChromeBarWidget-height ;
+  line-height: $gbc-ChromeBarWidget-height ;
+  min-height: $gbc-ChromeBarWidget-height ;
+}
+
+.gbc_ChromeBarWidget.mt-toolbar {
+  display: flex;
+
+  & .mt-goto-active-window {
+    display: none;
+
+    .windowBackButton {
+      font-size: large;
+      padding-right: 5px;
+    }
+  }
+
+  .inactiveWindow & {
+    background-color: $gbc-ChromeBarWidget-inactive-window-background-color;
+
+    & .mt-sidebar-toggle {
+      padding-right: $gbc-ChromeBarWidget-item-toggle-margin;
+    }
+
+    & .mt-goto-active-window,
+    & .mt-toolbar-title {
+      pointer-events: all;
+      display: flex;
+      background-color: $mt-toolbar-background-color;
+      cursor: pointer;
+      margin-left: 0px;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      .gbc_ButtonWidget {
+        cursor: pointer;
+
+      }
+    }
+  }
+
+  .is-mobile-device .g_measuring & {
+    height: $gbc-ChromeBarWidget-height ;
+  }
+
+  .gbc_ChromeBarPlaceholderWidget {
+    display: inherit;
+  }
+
+  &.lightmode{
+    .mt-sidebar-toggle{
+      display: none;
+    }
+    .containerElement{
+      min-width: inherit;
+    }
+  }
+
+  &.has-window-icon .mt-sidebar-toggle{
+    //display: none !important;
+    .appIcon{
+      display: none!important;
+    }
+  }
+
+  .has-applist-sidebar & .mt-sidebar-toggle {
+    cursor: default;
+  }
+  .has-topmenu-sidebar & .mt-sidebar-toggle {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+
+
+  .mt-sidebar-toggle {
+    padding-left: $gbc-ChromeBarWidget-item-toggle-margin;
+    width: auto;
+    cursor: default;
+    pointer-events: none;
+    img {
+      .has-window-icon &{
+        display: none;
+      }
+      max-width: $gbc-ChromeBarWidget-height;
+      box-sizing: border-box;
+      padding: $theme-margin-ratio*6px;
+    }
+
+    .is-not-mobile-device & {
+      img {
+        max-width: calc($gbc-ChromeBarWidget-height / 1.7);
+      }
+    }
+  }
+
+  .mt-toolbar-title {
+    display: inline-block;
+    flex: none;
+    align-self: center;
+    max-width: 50%;
+
+    & > * {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .currentDisplayedWindow{
+      display: none;
+    }
+    &.mt-toolbar-title-text .currentDisplayedWindow{
+      display: inline;
+    }
+  }
+
+  .cb-spacer{
+    display: flex;
+    flex: 1 1 auto;
+  }
+
+  .containerElement{
+    display: flex;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: center;
+
+    .gbc_ToolBarSeparatorWidget.mt-separator{
+      display: none;
+    }
+  }
+
+  .mt-sidebar-action-toggle {
+    display: flex;
+    align-self: center;
+    padding-left: calc($gbc-ChromeBarWidget-item-toggle-margin / 4 * 3);
+    padding-right: calc($gbc-ChromeBarWidget-item-toggle-margin / 2);
+  }
+
+  // Handle 4ST actionPanelPosition:none
+  &.menuHidden .menuItem{
+    display: none;
+  }
+
+  .zmdi-hc-2x{
+    font-size: $gbc-ChromeBarWidget-item-height;
+    align-self: center;
+  }
+}
+
+

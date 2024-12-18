@@ -1,0 +1,19 @@
+{
+  "name": "ScrollBarWidget",
+  "title": "ScrollBarWidget specific variables",
+  "description": "",
+  "type": "group",
+  "contents": [{
+    "name": "gbc-ScrollBarWidget-track-color",
+    "description": "Color of the ScrollBarWidget track",
+    "type": "color",
+    "defaultValue": "rgba(219, 219, 219, 0.6)"
+  },
+  {
+    "name": "gbc-ScrollBarWidget-thumb-color",
+    "description": "Color of the ScrollBarWidget thumb",
+    "type": "color",
+    "defaultValue": "rgba(186,186,186,1)"
+  }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "theme-network",
+  "title": "Theme network features",
+  "description": "Defines theme variables linked to network features",
+  "type": "group",
+  "contents": [{
+      "name": "theme-network-use-credentials-headers",
+      "title": "Enable credentials headers",
+      "description": "Enable credentials headers",
+      "type": "boolean",
+      "defaultValue": false
+    },
+    {
+      "name": "theme-network-retry-on-error",
+      "title": "Resend the HTTP request on specified HTTP error",
+      "description": "Resend the HTTP request on specified HTTP error",
+      "type": "array<number>",
+      "defaultValue": []
+    },
+    {
+      "name": "theme-network-retry-timeout",
+      "title": "Resend the HTTP request on HTTP error",
+      "description": "Timeout (in seconds) after which an HTTP request is resent",
+      "type": "array<number>",
+      "defaultValue": [1, 1, 1, 2, 2, 2, 4, 4, 4]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+/*
+ * FOURJS_START_COPYRIGHT(D,2018)
+ * Property of Four Js*
+ * (c) Copyright Four Js 2018, 2024. All Rights Reserved.
+ * * Trademark of Four Js Development Tools Europe Ltd
+ *   in the United States and elsewhere
+ *
+ * This file can be modified by licensees according to the
+ * product manual.
+ * FOURJS_END_COPYRIGHT */
+
+.tab-folder-debug {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .gbc_FolderWidget_titles_top {
+    flex: 1;
+  }
+
+  .mt-tab-next, .mt-tab-previous {
+    @extend .vanished;
+  }
+
+  .mt-tab-titles-bar {
+    height: 30px;
+  }
+}
+
+.gbc_MonitorWidget {
+  display: flex;
+  flex-direction: column-reverse;
+  flex: 0;
+
+
+  .headerSettings {
+    background: lightgrey;
+    padding: 3px;
+    flex: 0;
+  }
+
+}

@@ -1,0 +1,19 @@
+{
+  "name": "ProgressBarWidget",
+  "title": "Progress bar widget",
+  "description": "",
+  "type": "group",
+  "contents": [{
+    "name": "gbc-ProgressBarWidget-color",
+    "description": "",
+    "type": "color",
+    "defaultValue": "$mt-progress-color"
+  },
+  {
+    "name": "gbc-ProgressBarWidget-percentage-background-color",
+    "description": "Background color of the ProgressBar percentage",
+    "type": "color",
+    "defaultValue": "rgba(255, 255, 255, 0.88)"
+  }
+  ]
+}

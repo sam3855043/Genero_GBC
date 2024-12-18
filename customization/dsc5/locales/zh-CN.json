@@ -1,0 +1,210 @@
+{
+  "gwc": {
+    "lngName": "简体中文(zh_CN)",
+    "app": {
+      "ending": {
+        "title": "应用程式终止",
+        "session": "session编号",
+        "redirect": "应用程式已终止，数秒后您将被自动导向起始页面...."
+      },
+      "notFound": {
+        "title": "未发现指定应用程式",
+        "message": "应用程式 __appId__ 未存在指定路径，故未启动。<br>要确保应用程式存在，并请尝试重新执行"
+      },
+      "error": {
+        "message": "应用程式遇到问题"
+      },
+      "forbidden": {
+        "message": "应用程式遇到存取问题"
+      },
+      "webcompNotFound": {
+        "message": "未找到Web组件或'onICHostReady'不存在：此应用程序无法继续！"
+      },
+      "webcompError": {
+        "message": "Webcomponent抛出错误讯息"
+      },
+      "autologout": {
+        "message": "您已登出"
+      },
+      "uaProxy": {
+        "message": "应用程式意外停止"
+      },
+      "logs": {
+        "vm": "得到VM日志",
+        "proxy": "得到代理日志",
+        "gbc": "取得GBC执行日志"
+      },
+      "ripWidgetFound": "本执行页面中存在尚不支持的组件(widget)",
+      "waiting": "正在等待连接",
+      "restart": "重新开机同一应用程式",
+      "busy": "应用程式在忙",
+      "noload": "若未执行,请点击此处",
+      "run": "运行",
+      "close": "关闭",
+      "networkError": "应用程式不可用（错误 %1 ）"
+    },
+    "welcome": {
+      "title": "欢迎使用 GBC",
+      "version": "版本",
+      "build": "建立日期"
+    },
+    "date": {
+      "monthList": "一月, 二月, 三月, 四月, 五月, 六月, 七月, 八月, 九月, 十月, 十一月, 十二月",
+      "dayList": "星期日, 星期一, 星期二, 星期三, 星期四, 星期五, 星期六",
+      "weekdaysShort": "周日, 周一, 周二, 周三, 周四, 周五, 周六",
+      "previousMonth": "上个月",
+      "nextMonth": "下个月",
+      "midnight": "子夜",
+      "noon": "中午"
+    },
+    "button": {
+      "ok": "OK",
+      "cancel": "取消"
+    },
+    "contextMenu": {
+      "restoreColumnSort": "重置列顺序",
+      "showAllColumns": "显示所有列",
+      "hideAllColumns": "除第一行其余全隐藏",
+      "disable": "停用",
+      "readOnly": "只能读取",
+      "clearSettings": "清除设置",
+      "restoreDefaultSettings": "重新设置",
+      "clearStoredSettingsQuestion": "想清除存储的设置？（须重开应用程式,以便更改生效）",
+      "freezeLeft": "向左冻结",
+      "freezeRight": "向右冻结",
+      "unfreezeAll": "全部解冻",
+      "hideAllButSelected": "除选取外其余隐藏",
+      "selectAll": "全选",
+      "copyRow": "行复制",
+      "copyCell": "单格复制",
+      "autoFitAllColumns": "自动适配所有栏宽",
+      "fitToViewAllColumns": "仅适配看的到的栏宽"
+    },
+    "file": {
+      "upload": {
+        "droporclick": "拖拉档案至此处或点击上传。",
+        "droporclick-multiple": "拖拉档案(s)至此处或点击上传",
+        "select": "选取单档",
+        "select-multiple": "选取多档",
+        "processing": "执行上传",
+        "nofile": "未提供档",
+        "upload": "上传",
+        "ready": "准备上传",
+        "waiting": "等候",
+        "confirmation": "上传档案吗?",
+        "confirmation-multiple": "上传这些档案吗?",
+        "uploading": "正在上传",
+        "required": "你必须选择档案上传",
+        "accept": "期望档副档名",
+        "accept-multiple": "Expecting files with extension",
+        "file-already-uploaded": "One file already processed",
+        "files-already-uploaded": "Files already processed"
+      },
+      "clickForDownload": "点击此处如果下载没有自动启动。",
+      "select": "选择档"
+    },
+    "clipboard": {
+      "title": "要将其复制到剪贴板中，请点击您的系统复制快捷方式（通常为Ctrl + C）",
+      "copy": "复制",
+      "cut": "剪下",
+      "paste": "贴上"
+    },
+    "storedSettings": {
+      "configuration": "存储的设置配置",
+      "settings": "存储的设置",
+      "theme": "介面主題",
+      "darkMode": "暗黑模式",
+      "uiLanguage": "介面語言",
+      "defaultLng": "使用瀏覽器預設",
+      "disable": "停用存储的设置",
+      "enable": "启用存储的设置",
+      "reset": "重置存储的设置",
+      "confirm": "你确定?",
+      "changed": "存储的设置已被更改。请重新启动应用程序以使更改生效。",
+      "done": "完成!",
+      "message": "信息",
+      "messageContent": "浏览器的本地存储有问题"
+    },
+    "settings": "设置",
+    "decimalSeparator": ".",
+    "session": {
+      "logprompt": {
+        "logneeded": "您的凭证已失效，请重新登入",
+        "relog": "登入"
+      },
+      "waitingend": {
+        "title": "您的会话仍在运行",
+        "message": "您当前的会话仍在运行。 如果关闭此页面，则此会话中的所有待处理应用程序将被终止。"
+      }
+    },
+    "main": {
+      "theme": {
+        "Desktop Compact": "紧凑桌面(建议)",
+        "Desktop": "桌面主题(预设)",
+        "Desktop Compact Dark": "紧凑暗黑桌面",
+        "High Contrast": "高对比色"
+      },
+      "sidebar": {
+        "title": "我的Genero应用程序",
+        "multitab_title": "应用程序窗"
+      },
+      "chromebar": {
+        "appInfo": "应用程式讯息",
+        "debugTools": "除错工具",
+        "runInGDC": "使用GDC执行作业",
+        "proxyLog": "Proxy日志",
+        "vmLog": "VM日志",
+        "settings": "设置",
+        "close": "关闭视窗",
+        "recordingLog": "录制日志",
+        "getRecordedLog": "点击下载日志",
+        "filter": "过滤器",
+        "backButton": "回到上一个视窗"
+      },
+      "combobox": {
+        "isnull": "blank",
+        "isnotnull": "not blank"
+      }
+    },
+    "logPlayer": {
+      "unsavedConfirm": "An unsaved log already exists! \nDo you want to download it before starting a new session?",
+      "recordingLog": "Recording log",
+      "notEnabled": "Log recorder is not enabled!, use queryString ?recordGbcLog=1",
+      "logInfo": {
+        "headers": {
+          "browser": "BROWSER",
+          "themeVariables": "THEME VARIABLES",
+          "storedSettings": "STORED SETTINGS"
+        },
+        "version": "版本",
+        "platform": "平台",
+        "protocol": "協定",
+        "theme": "主题",
+        "availableThemes": "Available themes",
+        "sidebar": "SideBar visible",
+        "userAgent": "User Agent",
+        "os": "OS",
+        "lang": "Language",
+        "availableLang": "Available languages",
+        "dimension": "Screen size",
+        "url": "URL"
+      },
+      "topBar": {
+        "logFile": "Log File",
+        "statistics": "Statistics",
+        "statisticsTitle": "Enable statistics",
+        "delayFromLog": "Use delay from log",
+        "showHelpers": "Show interactions helpers",
+        "showHelpersTitle": "Display keys pressed, and mouse pointer",
+        "controls": "Controls",
+        "gotoStep": "Go to Step",
+        "delay": "Delay"
+      }
+    },
+    "starRating": {
+      "valueMinError": "The VALUEMIN attribute of the star rating widget cannot be less than 0",
+      "valueMaxError": "The VALUEMAX attribute of the star rating widget cannot be greater than 10",
+      "stepError": "The STEP attribute of the star rating widget can only be set to 1 or be undefined"
+    }
+  }
+}

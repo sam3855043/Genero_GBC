@@ -1,0 +1,87 @@
+/*
+ * FOURJS_START_COPYRIGHT(D,2018)
+ * Property of Four Js*
+ * (c) Copyright Four Js 2018, 2024. All Rights Reserved.
+ * * Trademark of Four Js Development Tools Europe Ltd
+ *   in the United States and elsewhere
+ *
+ * This file can be modified by licensees according to the
+ * product manual.
+ * FOURJS_END_COPYRIGHT */
+
+.dd_ChromeBarTitleWidget {
+  text-decoration: none;
+  cursor: pointer;
+
+
+  & .gbc_SessionSidebarWindowItemWidget {
+    align-items: center;
+    padding: $gbc-TopMenuWidget-vertical-padding $gbc-TopMenuWidget-horizontal-padding;
+    line-height: $gbc-TopMenuWidget-line-height;
+    font-weight: 400;
+    display: flex;
+    flex-direction: row;
+
+    & .gbc_ImageWidget {
+      padding: 0;
+    }
+
+    &:hover, &.current {
+      & a {
+        color: $gbc-DropDownWidget-item-current-color;
+      }
+
+      color: $gbc-DropDownWidget-item-current-color;
+      background-color: $gbc-DropDownWidget-item-current-background-color;
+    }
+
+    & a {
+      color: inherit;
+    }
+  }
+}
+
+//TODO: this rule make no sense?
+/*
+not(.dd_ChromeBarTitleWidget) .gbc_SessionSidebarWindowItemWidget {
+  @include mt-title-vm-waiting;
+  display: flex;
+  flex-direction: row;
+  line-height: $gbc-SessionSidebarWindowItemWidget-height;
+  padding: 0 8px; ;
+
+
+  &:hover {
+    background-color: $gbc-TopMenuWidget-hover-color;
+  }
+
+  border-radius: 0.2rem 0 0 0.2rem;
+  > a {
+    flex: 1 1 auto;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  &:hover {
+    background-color: $theme-disabled-background-color;
+  }
+
+  &.activeWindow .windowName {
+    @include mt-title-vm-active;
+  }
+  &.visibleWindow {
+    @include mt-title-visible;
+    background-color: $theme-disabled-background-color;
+  }
+
+  .windowIcon {
+    display: flex;
+    align-items: center;
+
+    .gbc_ImageWidget {
+      fill: $theme-secondary-background-color;
+      margin-right: $theme-margin-ratio*4px;
+    }
+  }
+}
+*/

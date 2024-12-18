@@ -1,0 +1,166 @@
+/*
+ * FOURJS_START_COPYRIGHT(D,2018)
+ * Property of Four Js*
+ * (c) Copyright Four Js 2018, 2024. All Rights Reserved.
+ * * Trademark of Four Js Development Tools Europe Ltd
+ *   in the United States and elsewhere
+ *
+ * This file can be modified by licensees according to the
+ * product manual.
+ * FOURJS_END_COPYRIGHT */
+
+.gbc_SplitterWidget {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  > i {
+    flex: 0 0 auto;
+    position: absolute;
+    background: #565656;
+  }
+  > .firefox_placekeeper {
+    pointer-events: none;
+    background: #E0E0E0;
+  }
+}
+
+
+.gbc_HBoxSplitterWidget {
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  min-height: 1px;
+  width: $gbc-SplitterWidget-splitter-size;
+  min-width: $gbc-SplitterWidget-splitter-size;
+  max-width: $gbc-SplitterWidget-splitter-size;
+  &.canSplit {
+    cursor: ew-resize;
+    > .dragZone {
+      height: 100%;
+      width: 32px;
+      position: absolute;
+    }
+    > .firefox_placekeeper {
+      width: 2px;
+      height: 100%;
+      background: #E0E0E0;
+    }
+    > i {
+      width: 2px;
+      height: 30px;
+      background: #565656;
+    }
+    &.splitterMoving {
+      > .firefox_placekeeper {
+        background: $mt-toolbar-background-color;
+        border-radius: 10px;
+        width: 2px;
+        height: 100%;
+      }
+      > i {
+        background: $mt-toolbar-background-color;
+        border-radius: 10px;
+        width: 6px;
+        height: 30px;
+      }
+    }
+  }
+}
+.gbc_HBoxSplitterWidget:hover {
+  &.canSplit {
+    cursor: ew-resize;
+    > .dragZone {
+      height: 100%;
+      width: 32px;
+      position: absolute;
+    }
+
+      > .firefox_placekeeper {
+        background: $mt-toolbar-background-color;
+        border-radius: 10px;
+        width: 2px;
+        height: 100%;
+      }
+      > i {
+        background: $mt-toolbar-background-color;
+        border-radius: 10px;
+        width: 6px;
+        height: 30px;
+      }
+    
+  }
+}
+
+.gbc_VBoxSplitterWidget {
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  min-width: 1px;
+  height: $gbc-SplitterWidget-splitter-size;
+  min-height: $gbc-SplitterWidget-splitter-size;
+  max-height: $gbc-SplitterWidget-splitter-size;
+
+  &.canSplit {
+    cursor: ns-resize;
+    > .dragZone {
+      height: 32px;
+      width: 100%;
+      position: absolute;
+    }
+    > .firefox_placekeeper {
+      width: 100%;
+      height: 2px;
+      background: #E0E0E0;
+    }
+    > i {
+      width: 30px;
+      height: 2px;
+      background: #565656;
+    }
+    &.splitterMoving {
+      > .firefox_placekeeper {
+        background: $mt-toolbar-background-color;
+        border-radius: 10px;
+        width: 100%;
+        height: 2px;
+      }
+      > i {
+        background: $mt-toolbar-background-color;
+        border-radius: 10px;
+        width: 30px;
+        height: 6px;
+      }
+    }
+  }
+}
+.gbc_VBoxSplitterWidget:hover {
+  &.canSplit {
+    cursor: ns-resize;
+    > .dragZone {
+      height: 32px;
+      width: 100%;
+      position: absolute;
+    }
+    > .firefox_placekeeper {
+      background: $mt-toolbar-background-color;
+      border-radius: 10px;
+      width: 100%;
+      height: 2px;
+    }
+    > i {
+      background: $mt-toolbar-background-color;
+      border-radius: 10px;
+      width: 30px;
+      height: 6px;
+    }
+  }
+}
+
+
+
+.gbc_SplitterWidget_splitholder {
+  @include fill-absolute;
+  background: $gbc-SplitterWidget-splitholder-background-color;
+  opacity:0.0;
+  display: none;
+}

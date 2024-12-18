@@ -1,0 +1,13 @@
+{
+  "name": "CommandLinkWidget",
+  "title": "Command link specific variables",
+  "description": "",
+  "type": "group",
+  "contents": [{
+    "name": "gbc-CommandLinkWidget-ttf-color",
+    "title": "Color definition of ttf icon in CommandLink Buttons",
+    "description": "Defines the color of the ttf icon in Button widget with style 'commandLink'",
+    "type": "color",
+    "defaultValue": "$mt-green-400"
+  }]
+}

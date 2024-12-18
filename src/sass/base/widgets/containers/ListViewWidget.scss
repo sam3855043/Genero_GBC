@@ -1,0 +1,73 @@
+/*
+ * FOURJS_START_COPYRIGHT(D,2018)
+ * Property of Four Js*
+ * (c) Copyright Four Js 2018, 2024. All Rights Reserved.
+ * * Trademark of Four Js Development Tools Europe Ltd
+ *   in the United States and elsewhere
+ *
+ * This file can be modified by licensees according to the
+ * product manual.
+ * FOURJS_END_COPYRIGHT */
+
+.gbc_ListViewWidget {
+  display: flex;
+  flex-direction: row;
+  @include mt-card-border;
+
+  padding: 2px;
+  overflow: hidden;
+  background-color: $gbc-ListViewWidget-background-color;
+  cursor: default;
+  min-width: 20px;
+
+  --rowHeight: #{$theme-table-minimal-row-height}px;
+
+  .g_measuring &.g_measureable {
+    height: auto !important;
+    width: auto !important;
+
+    .gbc_ListViewRowWidget, .gbc_ListViewRowWidget * {
+      display: inline !important;
+      height: auto !important;
+      width: auto !important;
+    }
+  }
+  &:not(.disabled) {
+    &.highlight .gbc_ListViewRowWidget {
+      &.currentRow {
+        background-color: $gbc-ListViewWidget-currentRow-background-color !important;
+        color: $gbc-ListViewWidget-currentRow-color !important;
+        fill: $gbc-ListViewWidget-currentRow-color;
+
+        .mt-field, .mt-label {
+          color: inherit !important;
+          fill: inherit;
+        }
+        @include placeholder {
+          color: $gbc-ListViewWidget-background-color;
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}
+
+.gbc_ListViewRowsContainer {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.gbc_ListViewScrollArea {
+  width: 100%;
+  overflow-y: scroll;
+  display: flex;
+}
+
+.gbc_ListViewRowWidget{
+  height: var(--rowHeight);
+
+  .gbc_ImageWidget{
+    height: var(--rowHeight);
+  }
+}

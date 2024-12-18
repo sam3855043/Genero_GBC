@@ -1,0 +1,19 @@
+{
+  "name": "EditWidget",
+  "title": "Edit specific variables",
+  "description": "",
+  "type": "group",
+  "contents": [{
+      "name": "gbc-Edit-mobile-comment-to-placeholder",
+      "description": "",
+      "type": "number",
+      "defaultValue": "0"
+    },
+    {
+      "name": "gbc-Edit-desktop-comment-to-placeholder",
+      "description": "",
+      "type": "number",
+      "defaultValue": "0"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+/*
+ * FOURJS_START_COPYRIGHT(D,2018)
+ * Property of Four Js*
+ * (c) Copyright Four Js 2018, 2024. All Rights Reserved.
+ * * Trademark of Four Js Development Tools Europe Ltd
+ *   in the United States and elsewhere
+ *
+ * This file can be modified by licensees according to the
+ * product manual.
+ * FOURJS_END_COPYRIGHT */
+
+.gbc_ScrollWidget{
+  flex: 1 0 auto;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  .spacer {
+    width: 1px; // fix for Firefox
+    min-height: 1px;
+  }
+}
+
+.gbc_ScrollAreaWidget{
+  height: 100%;
+  flex-grow: 0;
+  flex-shrink: 1;
+  overflow: hidden;
+  .g_measuring &.g_measureable .spacer{
+    height:1px !important;
+  }
+  .spacer {
+    width: 1px; // fix for Firefox
+    min-height: 1px;
+  }
+}
+
+.thinScrollBar-hidden{
+  overflow-y: hidden;
+}
+
+.gbc_ApplicationWidget:not(.inactiveWindow) .ss-container:hover .ss-scroll {
+  opacity: 1;
+}
+
+.ss-grabbed {
+  cursor: default;
+  -o-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+

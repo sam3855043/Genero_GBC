@@ -1,0 +1,204 @@
+{
+  "gwc": {
+    "lngName": "Español",
+    "app": {
+      "ending": {
+        "title": "La aplicación finalizó",
+        "session": "ID de Sesión",
+        "redirect": "Su sesión ha terminado. Será redirigido automáticamente en unos segundos."
+      },
+      "notFound": {
+        "title": "La aplicación no pudo ser encontrada",
+        "message": "La aplicación __appId__ no comenzó porque no pudo ser encontrada.<br> Asegúrese de que existe la aplicación e intente reiniciar la misma aplicación"
+      },
+      "error": {
+        "message": "La aplicación ha encontrado un problema"
+      },
+      "forbidden": {
+        "message": "La aplicación ha encontrado un problema de acceso"
+      },
+      "webcompNotFound": {
+        "message": "No se encontró el Webcomponent o el método 'onICHostReady' no está presente : esta aplicación no puede continuar!"
+      },
+      "webcompError": {
+        "message": "El Webcomponent arrojó un error"
+      },
+      "autologout": {
+        "message": "Usted ha sido desconectado"
+      },
+      "uaProxy": {
+        "message": "La aplicación se detuvo inesperadamente"
+      },
+      "logs": {
+        "vm": "Obtener los logs de la VM",
+        "proxy": "Obtener los logs del proxy",
+        "gbc": "Obtener los logs del"
+      },
+      "ripWidgetFound": "The current page contain unsupported widget",
+      "waiting": "Esperando la conexión",
+      "restart": "Reiniciar la misma aplicación",
+      "busy": "La aplicación está ocupada",
+      "noload": "Si no carga, haga clic aquí.",
+      "run": "Ejecutar",
+      "close": "Cerrar",
+      "networkError": "La aplicación no está mas disponible (error %1)."
+    },
+    "welcome": {
+      "title": "Bienvenido a GBC",
+      "version": "Version",
+      "build": "Build"
+    },
+    "date": {
+      "monthList": "Enero,Febrero,Marzo,Abril,Mayo,Junio,Julio,Agosto,Septiembre,Octubre,Noviembre,Diciembre",
+      "dayList": "Domingo,Lunes,Martes,Miércoles,Jueves,Viernes,Sábado",
+      "weekdaysShort": "Dom,Lun,Mar,Mie,Jue,Vie,Sab",
+      "previousMonth": "Mes anterior",
+      "nextMonth": "Mes siguiente",
+      "midnight": "Medianoche",
+      "noon": "Mediodía"
+    },
+    "button": {
+      "ok": "Aceptar",
+      "cancel": "Cancelar"
+    },
+    "contextMenu": {
+      "restoreColumnSort": "Restaurar orden de las columnas",
+      "showAllColumns": "Mostrar todas las columnas",
+      "hideAllColumns": "Hide all columns except first",
+      "disable": "Deshabilitar",
+      "readOnly": "Sólo lectura",
+      "clearSettings": "Limpiar ajustes",
+      "restoreDefaultSettings": "Restaurar configuración predeterminada",
+      "clearStoredSettingsQuestion": "Desea limpiar los ajustes almacenados ? (Por favor, reinicie la aplicación para que los cambios tengan efecto.)",
+      "freezeLeft": "Fijar a izquierda",
+      "freezeRight": "Fijar a derecha",
+      "unfreezeAll": "No fijar más",
+      "hideAllButSelected": "Esconder las otras columnas",
+      "selectAll": "Seleccionar todo",
+      "copyRow": "Copiar fila",
+      "copyCell": "Copiar celda",
+      "autoFitAllColumns": "Autoajustar todas las columnas",
+      "fitToViewAllColumns": "Ajustar para ver todas las columnas"
+    },
+    "file": {
+      "upload": {
+        "droporclick": "Arrastre aquí el archivo o presione para cargar.",
+        "droporclick-multiple": "Arrastre los archivos aquí o haga clic para cargar.",
+        "select": "Seleccione archivo",
+        "select-multiple": "Seleccione archivos",
+        "processing": "Carga en progreso",
+        "nofile": "No se informó el archivo",
+        "upload": "Carga de archivo",
+        "ready": "Listo para cargar",
+        "waiting": "esperando",
+        "confirmation": "Subir el archivo ?",
+        "confirmation-multiple": "Subir los archivos ?",
+        "uploading": "Subiendo",
+        "required": "Debe seleccionar un archivo a cargar",
+        "accept": "Esperando archivo con extensión",
+        "accept-multiple": "Esperando archivos con extensión",
+        "file-already-uploaded": "One file already processed",
+        "files-already-uploaded": "Files already processed"
+      },
+      "clickForDownload": "Haga clic aquí si la descarga no se inicia automáticamente.",
+      "select": "Seleccione archivo"
+    },
+    "clipboard": {
+      "title": "Para colocar esto en su portapapeles, utilice el atajo para Copiar de su sistema (normalmente Ctrl+C)",
+      "copy": "Copiar",
+      "cut": "Cut",
+      "paste": "Pegar"
+    },
+    "storedSettings": {
+      "configuration": "Configuración de Ajustes almacenados",
+      "settings": "Ajustes almacenados",
+      "theme": "Tema de la interfaz",
+      "darkMode": "Dark mode",
+      "uiLanguage": "Lenguaje de interfaz",
+      "defaultLng": "Usar el valor predeterminado del navegador",
+      "disable": "Deshabilitar Ajustes almacenados",
+      "enable": "Habilitar Ajustes almacenados",
+      "reset": "Reiniciar Ajustes almacenados",
+      "confirm": "Está seguro?",
+      "changed": "Los ajustes almacenados han sido modificados. Por favor, reinicie la aplicación para que los cambios tengan efecto",
+      "done": "Hecho!",
+      "message": "Mensaje",
+      "messageContent": "Algo está mal en el almacenamiento local del navegador"
+    },
+    "settings": "Configuración",
+    "decimalSeparator": ",",
+    "session": {
+      "logprompt": {
+        "logneeded": "Sus credenciales han sido invalidadas, haga login nuevamente",
+        "relog": "login"
+      },
+      "waitingend": {
+        "title": "Su sesión aún se está ejecutando",
+        "message": "Su sesión actual aún se está ejecutando. Si usted cierra esta página, todas las aplicaciones pendientes de esta sesión serán terminadas."
+      }
+    },
+    "main": {
+      "sidebar": {
+        "title": "Mis aplicaciones Genero",
+        "multitab_title": "Ventanas de mi aplicación"
+      },
+      "chromebar": {
+        "appInfo": "Información de la aplicación",
+        "debugTools": "Herramientas de depuración",
+        "runInGDC": "Ejecutar en GDC",
+        "proxyLog": "Registros del Proxy",
+        "vmLog": "Registros de la VM",
+        "settings": "Configuración",
+        "close": "Cerrar ventana",
+        "recordingLog": "Grabando el registro",
+        "getRecordedLog": "Haga clic aquí para obtener el registro",
+        "filter": "Filter",
+        "backButton": "Back to active window"
+      },
+      "combobox": {
+        "isnull": "blank",
+        "isnotnull": "not blank"
+      }
+    },
+    "logPlayer": {
+      "unsavedConfirm": "Existe un registro no guardado! \nDesea descargarlo antes de comenzar una nueva sesión?",
+      "recordingLog": "Grabando el registro",
+      "notEnabled": "La grabación de registros no está habilitada!, use queryString ?recordGbcLog=1",
+      "logInfo": {
+        "headers": {
+          "browser": "NAVEGADOR",
+          "themeVariables": "VARIABLES DE TEMA",
+          "storedSettings": "AJUSTES ALMACENADOS"
+        },
+        "version": "Versión",
+        "platform": "Plataforma",
+        "protocol": "Protocolo",
+        "theme": "Tema",
+        "availableThemes": "Temas disponibles",
+        "sidebar": "Barra lateral visible",
+        "userAgent": "User Agent",
+        "os": "Sistema Operativo",
+        "lang": "Idioma",
+        "availableLang": "Idiomas disponibles",
+        "dimension": "Dimensión",
+        "url": "URL"
+      },
+      "topBar": {
+        "logFile": "Archivo de registro",
+        "statistics": "Estadísticas",
+        "statisticsTitle": "Habilitar estadísticas",
+        "delayFromLog": "Usar retraso del registro",
+        "showHelpers": "Mostrar ayudantes de interacciones",
+        "showHelpersTitle": "Mostrar teclas presionadas y puntero del mouse",
+        "controls": "Controles",
+        "gotoStep": "Ir al paso",
+        "delay": "Retraso"
+      }
+    },
+    "starRating": {
+      "valueMinError": "El atributo VALUEMIN del widget de valoración de estrellas no puede ser inferior a 0",
+      "valueMaxError": "El atributo VALUEMAX del widget de valoración por estrellas no puede ser mayor que 10",
+      "stepError": "El atributo STEP del widget de valoración por estrellas sólo puede ser igual a 1 o no estar definido."
+    }
+  }
+}

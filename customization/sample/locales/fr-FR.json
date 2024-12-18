@@ -1,0 +1,15 @@
+{
+  "gwc": {
+    "main": {
+      "theme": {
+        "Default": "Thème par defaut",
+        "High contrast": "Fortement contrasté"
+      }
+    }
+  },
+  "mycusto": {
+    "window": {
+      "currentTitle": "Titre de la fenêtre courante"
+    }
+  }
+}

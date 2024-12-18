@@ -1,0 +1,41 @@
+/*
+ * FOURJS_START_COPYRIGHT(D,2018)
+ * Property of Four Js*
+ * (c) Copyright Four Js 2018, 2024. All Rights Reserved.
+ * * Trademark of Four Js Development Tools Europe Ltd
+ *   in the United States and elsewhere
+ *
+ * This file can be modified by licensees according to the
+ * product manual.
+ * FOURJS_END_COPYRIGHT */
+
+.gbc_ChromeBarTitleWidget {
+  cursor: pointer;
+  display: flex;
+  padding-right: $gbc-ChromeBarWidget-title-margin;
+
+  .windowListIcon {
+    display: flex;
+    align-items: center;
+  }
+
+  .windowListIcon .zmdi {
+    font-size: large;
+  }
+
+  .windowIcon {
+    display: flex;
+
+    .gbc_ImageWidget {
+      align-items: center;
+      margin-right: 4px;
+      box-sizing: border-box;
+      padding: $theme-margin-ratio*6px;
+      @extend .icon;
+      display: inherit!important;
+      img {
+        object-fit: contain;
+      }
+    }
+  }
+}

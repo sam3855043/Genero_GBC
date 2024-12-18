@@ -1,0 +1,12 @@
+{
+  "name": "mt-list",
+  "title": "Material list specific variables",
+  "description": "",
+  "type": "group",
+  "contents": [{
+    "name": "mt-list-field-background-color",
+    "description": "",
+    "type": "color",
+    "defaultValue": "$theme-field-background-color"
+  }]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "responsive-defaults",
+  "title": "Responsive defaults variables",
+  "description": "variables used to define responsive",
+  "type": "group",
+  "contents": [{
+      "name": "responsive-small-width",
+      "title": "Small devices maximum width",
+      "description": "Maximum width for phones / small screen",
+      "type": "string",
+      "defaultValue": "576px"
+    },
+    {
+      "name": "responsive-medium-width",
+      "title": "Medium devices maximum width",
+      "description": "Maximum width for tablets / medium screen",
+      "type": "string",
+      "defaultValue": "768px"
+    }
+  ]
+}

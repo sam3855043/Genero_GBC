@@ -1,0 +1,36 @@
+/*
+ * FOURJS_START_COPYRIGHT(D,2018)
+ * Property of Four Js*
+ * (c) Copyright Four Js 2018, 2024. All Rights Reserved.
+ * * Trademark of Four Js Development Tools Europe Ltd
+ *   in the United States and elsewhere
+ *
+ * This file can be modified by licensees according to the
+ * product manual.
+ * FOURJS_END_COPYRIGHT */
+
+.g_HBoxLayoutEngine {
+  position: relative;
+  > div > .containerElement > .g_BoxElement {
+    top:0;
+    position: absolute;
+  }
+
+  &.splitView {
+    height: 100%;
+    > div {
+      display: flex; // needed for iOS
+      height: 100%;
+    }
+  }
+}
+
+// selector to identify hbox tags : Grid with direct HBox as child
+.gbc_GridWidget > .g_GridElement > .g_HBoxLayoutEngine {
+  >div>.containerElement>.g_BoxElement {
+    top: 0;
+    position: absolute;
+    display: flex;
+    align-items: center; // vertical center elements in hboxtags
+  }
+}

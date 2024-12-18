@@ -1,0 +1,93 @@
+/*
+ * FOURJS_START_COPYRIGHT(D,2018)
+ * Property of Four Js*
+ * (c) Copyright Four Js 2018, 2024. All Rights Reserved.
+ * * Trademark of Four Js Development Tools Europe Ltd
+ *   in the United States and elsewhere
+ *
+ * This file can be modified by licensees according to the
+ * product manual.
+ * FOURJS_END_COPYRIGHT */
+
+.gbc_ColorPickerWidget {
+  margin: 0 auto;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  clear: both;
+
+  box-sizing: content-box;
+
+  .track {
+    transition: width 0.3s, height 0.3s, left 0.3s, top 0.3s;
+    background:     #EFEFEF url('$$RES/img/text-color.png') no-repeat 50% 50%;
+    height:         0px;
+    width:          0px;
+    padding:        10px;
+    position:       absolute;
+    cursor:         crosshair;
+    float:          left;
+    left:           6px;
+    top:            6px;
+    //    display:        none;
+    border:         1px solid #ccc;
+    z-index:        10;
+    border-radius: 150px;
+    overflow: hidden;
+    >canvas{
+      transition: width 0.3s, height 0.3s, left 0.3s, top 0.3s;
+      height:         0px;
+      width:          0px;
+    }
+  }
+  .track.shown{
+    left:           -71px;
+    top:            -71px;
+    width:150px;
+    height:150px;
+    >canvas{
+      width:150px;
+      height:150px;
+
+    }
+  }
+
+  .color {
+    width:          25px;
+    height:         25px;
+    padding:        1px;
+    border:         1px solid #ccc;
+    display:        block;
+    position:       relative;
+    z-index:        11;
+    background-color: #EFEFEF;
+    -webkit-border-radius: 27px;
+    -moz-border-radius: 27px;
+    border-radius: 27px;
+    cursor: pointer;
+  }
+
+  .colorInner {
+    width:          25px;
+    height:         25px;
+    -webkit-border-radius: 27px;
+    -moz-border-radius: 27px;
+    border-radius: 27px;
+  }
+
+  .dropdown {
+    list-style: none;
+    display: none;
+    width: 27px;
+    position: absolute;
+    top: 28px;
+    border: 1px solid #ccc;
+    left: 0;
+    z-index: 1000;
+  }
+
+  .dropdown li{
+    height: 25px;
+    cursor: pointer;
+  }
+}

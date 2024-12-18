@@ -1,0 +1,9 @@
+{
+  "theme-message-display-time": 0,
+  "theme-error-display-time": 0,
+  "mt-button-primary-background-color" : "#dddddd",
+  "mt-button-primary-emphasis-background-color" : "#dddddd",
+  "mt-button-primary-color" : "#1976d2",
+  "mt-button-link-color" : "#8e9fc7",
+  "mt-button-link-active-color" : "#dddddd"
+}

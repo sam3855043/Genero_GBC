@@ -1,0 +1,36 @@
+/*
+ * FOURJS_START_COPYRIGHT(D,2018)
+ * Property of Four Js*
+ * (c) Copyright Four Js 2018, 2024. All Rights Reserved.
+ * * Trademark of Four Js Development Tools Europe Ltd
+ *   in the United States and elsewhere
+ *
+ * This file can be modified by licensees according to the
+ * product manual.
+ * FOURJS_END_COPYRIGHT */
+
+.gbc_ApplicationLauncherWidget {
+  @include fill-absolute(0px);
+  display: flex;
+  flex-direction: column;
+
+  .mt-card {
+    margin: 16px;
+    background-color: $theme-secondary-alternative-background-color;
+  }
+
+  .mt-card-richhead {
+    display: flex;
+    align-items: center;
+    padding: 32px;
+  }
+
+  .mt-card-header-text {
+    flex: 1 1 auto;
+  }
+
+  .session {
+    padding: 16px;
+    margin: 0;
+  }
+}

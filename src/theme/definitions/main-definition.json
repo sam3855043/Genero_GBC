@@ -1,0 +1,921 @@
+[
+  {
+    "name": "theme",
+    "title": "Theme",
+    "description": "Defines theme main variables",
+    "type": "group",
+    "contents": [
+      {
+        "name": "theme-colors",
+        "title": "Theme colors",
+        "description": "Defines theme main colors",
+        "type": "group",
+        "contents": [
+          {
+            "name": "theme-primary-color",
+            "title": "Theme primary color",
+            "description": "",
+            "type": "color",
+            "defaultValue": "$palette-text-primary-100",
+            "aliases": [
+              "gbc-secondary-text-color"
+            ]
+          },
+          {
+            "name": "theme-primary-background-color",
+            "title": "Theme primary background color",
+            "description": "This theme variable sets the primary background color of the application. For apps on Android devices, it also sets the color of the navigation bar and status bar. Visit \"Android Bars in Material Design\" (https://m2.material.io/design/platform-guidance/android-bars.html#status) to learn about the navigation and status bars on Android devices.",
+            "type": "color",
+            "defaultValue": "$palette-primary-700",
+            "aliases": [
+              "gbc-primary-color"
+            ]
+          },
+          {
+            "name": "theme-primary-emphasis-color",
+            "title": "Theme primary emphasis color",
+            "description": "Used for text you want to accentuate",
+            "type": "color",
+            "defaultValue": "$palette-primary-600",
+            "aliases": [
+              "gbc-primary-medium-color"
+            ]
+          },
+          {
+            "name": "theme-primary-emphasis-background-color",
+            "title": "Theme primary emphasis background color",
+            "description": "",
+            "type": "color",
+            "defaultValue": "$palette-primary-600",
+            "aliases": [
+              "gbc-primary-medium-color"
+            ]
+          },
+          {
+            "name": "theme-primary-faded-background-color",
+            "title": "Theme primary faded background color",
+            "description": "",
+            "type": "color",
+            "defaultValue": "$palette-primary-100",
+            "aliases": [
+              "gbc-primary-light-color"
+            ]
+          },
+          {
+            "name": "theme-secondary-color",
+            "title": "Theme secondary color",
+            "description": "",
+            "type": "color",
+            "defaultValue": "$palette-text-secondary-100",
+            "aliases": [
+              "gbc-primary-text-color"
+            ]
+          },
+          {
+            "name": "theme-secondary-faded-color",
+            "title": "Theme secondary faded color",
+            "description": "",
+            "type": "color",
+            "defaultValue": "$palette-text-secondary-54"
+          },
+          {
+            "name": "theme-secondary-background-color",
+            "title": "Theme secondary background color",
+            "description": "",
+            "type": "color",
+            "defaultValue": "$palette-secondary-100",
+            "aliases": [
+              "gbc-primary-background-color"
+            ]
+          },
+          {
+            "name": "theme-field-background-color",
+            "title": "Theme field background color",
+            "description": "Background color for fields and scrollable widgets (table, listviews, scrollgrids)",
+            "type": "color",
+            "defaultValue": "$palette-background",
+            "aliases": [
+              "gbc-field-background-color"
+            ]
+          },
+          {
+            "name": "theme-alternate-row-background-color",
+            "title": "Theme alternate row background color",
+            "description": "Background color for table odd rows",
+            "type": "color",
+            "defaultValue": "$palette-disabled-100",
+            "aliases": [
+              "gbc-alternate-row-background-color"
+            ]
+          },
+          {
+            "name": "theme-header-color",
+            "title": "Theme header color",
+            "description": "Header (and topmenu) background color.",
+            "type": "color",
+            "defaultValue": "$palette-secondary-100",
+            "aliases": [
+              "gbc-header-color"
+            ]
+          },
+          {
+            "name": "theme-separator-color",
+            "title": "Theme separator color",
+            "description": "Toolbar separator color.",
+            "type": "color",
+            "defaultValue": "$palette-secondary-300",
+            "aliases": [
+              "gbc-separator-color"
+            ]
+          },
+          {
+            "name": "theme-disabled-color",
+            "title": "Theme disabled color",
+            "description": "Generally used as widgets disabled foreground color",
+            "type": "color",
+            "defaultValue": "$palette-text-secondary-54"
+          },
+          {
+            "name": "theme-disabled-background-color",
+            "title": "Theme disabled background color",
+            "description": "Generally used as widgets disabled background color",
+            "type": "color",
+            "defaultValue": "$palette-disabled-200",
+            "aliases": [
+              "gbc-disabled-color"
+            ]
+          },
+          {
+            "name": "theme-field-border-color",
+            "title": "Theme field border color",
+            "description": "",
+            "type": "color",
+            "defaultValue": "$palette-disabled-300",
+            "aliases": []
+          },
+          {
+            "name": "theme-overlay-background-color",
+            "title": "Theme overlay color",
+            "description": "Using text palette to have alpha channel",
+            "type": "color",
+            "defaultValue": "$palette-text-secondary-26"
+          },
+          {
+            "name": "theme-message-background-color",
+            "description": "Message background color.",
+            "type": "color",
+            "defaultValue": "$palette-secondary-800",
+            "aliases": [
+              "gbc-message-color"
+            ]
+          },
+          {
+            "name": "theme-error-background-color",
+            "description": "Error message background color.",
+            "type": "color",
+            "defaultValue": "$palette-error",
+            "aliases": [
+              "gbc-error-color"
+            ]
+          },
+          {
+            "name": "theme-sidebar-background-color",
+            "title": "Theme sidebar background color",
+            "description": "Sidebar background color.",
+            "type": "color",
+            "defaultValue": "$palette-secondary-700",
+            "aliases": []
+          },
+          {
+            "name": "theme-sidebar-title-color",
+            "title": "Theme sidebar title color",
+            "description": "Sidebar tile color.",
+            "type": "color",
+            "defaultValue": "$palette-text-primary",
+            "aliases": []
+          },
+          {
+            "name": "theme-sidebar-settings-color",
+            "title": "Theme sidebar settings color",
+            "description": "Sidebar settings color.",
+            "type": "color",
+            "defaultValue": "$palette-text-primary",
+            "aliases": []
+          }
+        ]
+      },
+      {
+        "name": "theme-optional-colors",
+        "title": "Theme optional colors",
+        "description": "These colors are defined by default using other theme colors",
+        "type": "group",
+        "contents": [
+          {
+            "name": "theme-secondary-alternative-background-color",
+            "title": "Theme secondary alternative background color",
+            "description": "Alternative background color for fields and scrollable widgets (table, listviews, scrollgrids)",
+            "type": "color",
+            "defaultValue": "$theme-field-background-color",
+            "aliases": [
+              "gbc-secondary-background-color"
+            ]
+          },
+          {
+            "name": "theme-field-disabled-background-color",
+            "title": "Theme field disabled background color",
+            "description": "Widget disabled background color.",
+            "type": "color",
+            "defaultValue": "$theme-disabled-background-color",
+            "aliases": [
+              "gbc-field-disabled-background-color"
+            ]
+          },
+          {
+            "name": "theme-field-readonly-background-color",
+            "title": "Theme field readonly background color",
+            "description": "Read-only field's background color",
+            "type": "color",
+            "defaultValue": "$theme-disabled-background-color",
+            "aliases": [
+              "gbc-field-readonly-background-color"
+            ]
+          },
+          {
+            "name": "theme-placeholder-color",
+            "title": "Theme placeholder color",
+            "description": "Set the color of the placeholder text of an input field",
+            "type": "color",
+            "defaultValue": "$theme-disabled-color"
+          },
+          {
+            "name": "theme-selection-text-color",
+            "title": "Theme selection text color",
+            "description": "Text selection color (Not working on iOS as ::selection css pseudo element is not supported according to https://caniuse.com/css-selection)",
+            "type": "color",
+            "defaultValue": "$theme-currentrow-color"
+          },
+          {
+            "name": "theme-selection-background-color",
+            "title": "Theme selection background color",
+            "description": "Text selection background color",
+            "type": "color"
+          },
+          {
+            "name": "theme-message-color",
+            "description": "Message foreground color.",
+            "type": "color",
+            "defaultValue": "$theme-primary-color"
+          },
+          {
+            "name": "theme-error-color",
+            "description": "Error message foreground color.",
+            "type": "color",
+            "defaultValue": "$theme-primary-color"
+          },
+          {
+            "name": "theme-currentrow-color",
+            "description": "Set the current row color",
+            "type": "color",
+            "defaultValue": "$theme-primary-color"
+          },
+          {
+            "name": "theme-currentrow-background-color",
+            "description": "Set the current row background color",
+            "type": "color",
+            "defaultValue": "$theme-primary-background-color"
+          },
+          {
+            "name": "theme-chromebar-inactive-window-background-color",
+            "description": "Set the Chromebar inactive window background color",
+            "type": "color",
+            "defaultValue": "$theme-overlay-background-color"
+          },
+          {
+            "name": "theme-chromebar-goto-active-window-background-color",
+            "description": "Set the Chromebar active window background color",
+            "type": "color",
+            "defaultValue": "$theme-primary-background-color"
+          },
+          {
+            "name": "theme-chromebar-goto-active-window-background-hover-color",
+            "description": "Set the Chromebar active window background hover color",
+            "type": "color",
+            "defaultValue": "$theme-primary-emphasis-background-color"
+          },
+          {
+            "name": "theme-sidebar-color",
+            "title": "Theme sidebar text/icon color",
+            "description": "Sidebar color.",
+            "type": "color",
+            "defaultValue": "$theme-primary-color",
+            "aliases": []
+          },
+          {
+            "name": "theme-webkit-scrollbars-color",
+            "title": "Theme webkit scrollbars thumb color",
+            "description": "Define webkit scrollbars default thumb color",
+            "type": "color",
+            "defaultValue": "$theme-primary-background-color"
+          }
+        ]
+      },
+      {
+        "name": "theme-layout",
+        "title": "Theme layout variables",
+        "description": "Defines theme layout variables",
+        "type": "group",
+        "contents": [
+          {
+            "name": "theme-field-height-ratio",
+            "title": "Theme field height ratio",
+            "description": "Ratio applied to the space around text in a field (top and bottom).",
+            "type": "number",
+            "defaultValue": 0.7,
+            "aliases": [
+              "gbc-field-height-ratio"
+            ]
+          },
+          {
+            "name": "theme-field-default-height",
+            "title": "Theme field default height",
+            "description": "Field default height",
+            "type": "size",
+            "defaultValue": "$theme-field-height-ratio * 32px",
+            "aliases": [
+              "field-default-height"
+            ]
+          },
+          {
+            "name": "theme-font-size-ratio",
+            "title": "Theme font-size ratio",
+            "description": "The font size adjustment ratio in relation to Droid Sans font family sizes. For example, if the browser's available font for the &lt;body&gt; element is Times (12px), size of letters are adjusted by multiplying theme-font-size-ratio by font size. In our example, they display at 10.8 pixels high, (0.9 × 12).",
+            "type": "number",
+            "defaultValue": 0.8,
+            "aliases": [
+              "gbc-font-size-ratio"
+            ]
+          },
+          {
+            "name": "theme-host-action-default-height",
+            "title": "Theme host-action default height",
+            "description": "The default toolbar height",
+            "type": "size",
+            "defaultValue": "$theme-margin-ratio * 56px",
+            "aliases": [
+              "mt-toolbar-height"
+            ]
+          },
+          {
+            "name": "theme-button-default-width",
+            "title": "Theme button default width",
+            "description": "Button default minimal width",
+            "type": "size",
+            "defaultValue": "$theme-font-size-ratio * 100px",
+            "aliases": [
+              "button-default-width"
+            ]
+          },
+          {
+            "name": "theme-margin-ratio",
+            "title": "Theme margin ratio",
+            "description": "Ratio applied to the margin or space on the left of a field. When you type text in a field you have some space before text that is defined by this variable.",
+            "type": "number",
+            "defaultValue": 0.6,
+            "aliases": [
+              "gbc-margin-ratio"
+            ]
+          },
+          {
+            "name": "theme-density-scale",
+            "title": "Theme density scale",
+            "description": "Density to multiply by density interval to create a more or less compact theme. The higher the number, the less dense is the theme",
+            "type": "number",
+            "defaultValue": 0,
+            "aliases": [
+              "gbc-density-scale"
+            ]
+          },
+          {
+            "name": "theme-input-padding-top",
+            "title": "Theme input padding-top",
+            "description": "Padding space top for inputs",
+            "type": "size",
+            "defaultValue": "$theme-margin-ratio * 2px"
+          },
+          {
+            "name": "theme-input-padding-right",
+            "title": "Theme input padding-right",
+            "description": "Padding space right for inputs",
+            "type": "size",
+            "defaultValue": "$theme-margin-ratio * 6px"
+          },
+          {
+            "name": "theme-input-padding-bottom",
+            "title": "Theme input padding-bottom",
+            "description": "Padding space bottom for inputs",
+            "type": "size",
+            "defaultValue": "$theme-margin-ratio * 2px"
+          },
+          {
+            "name": "theme-input-padding-left",
+            "title": "Theme input padding-left",
+            "description": "Padding space left for inputs",
+            "type": "size",
+            "defaultValue": "$theme-margin-ratio * 6px"
+          },
+          {
+            "name": "theme-textarea-padding-top",
+            "title": "Theme textarea padding-top",
+            "description": "Padding space top for textareas",
+            "type": "size",
+            "defaultValue": "$theme-margin-ratio * 4px"
+          },
+          {
+            "name": "theme-textarea-padding-right",
+            "title": "Theme textarea padding-right",
+            "description": "Padding space right for textareas",
+            "type": "size",
+            "defaultValue": "$theme-input-padding-right"
+          },
+          {
+            "name": "theme-textarea-padding-bottom",
+            "title": "Theme textarea padding-bottom",
+            "description": "Padding space bottom for textareas",
+            "type": "size",
+            "defaultValue": "0"
+          },
+          {
+            "name": "theme-textarea-padding-left",
+            "title": "Theme textarea padding-left",
+            "description": "Padding space left for textareas",
+            "type": "size",
+            "defaultValue": "$theme-input-padding-left"
+          },
+          {
+            "name": "theme-table-margin",
+            "description": "Sets the margin of tables",
+            "type": "size",
+            "defaultValue": "$theme-margin-ratio * 10px",
+            "aliases": [
+              "gbc-table-margin"
+            ]
+          },
+          {
+            "name": "theme-combobox-margin",
+            "description": "Sets the combobox margin",
+            "type": "size",
+            "defaultValue": "5px",
+            "aliases": [
+              "gbc-combobox-margin"
+            ]
+          },
+          {
+            "name": "theme-combobox-padding",
+            "description": "Padding space for combobox",
+            "type": "size",
+            "defaultValue": "2px",
+            "aliases": [
+              "gbc-combobox-padding"
+            ]
+          },
+          {
+            "name": "theme-radiobutton-size",
+            "title": "radiobutton size",
+            "description": "Size of the radio button in pixels.",
+            "type": "size",
+            "defaultValue": "14px",
+            "aliases": [
+              "gbc-radiobutton-size"
+            ]
+          },
+          {
+            "name": "theme-checkbox-size",
+            "title": "checkbox size",
+            "description": "Size of the checkbox in pixels",
+            "type": "size",
+            "defaultValue": "14px",
+            "aliases": [
+              "gbc-checkbox-size"
+            ]
+          },
+          {
+            "name": "theme-sidebar-always-visible-min-width",
+            "title": "Theme sidebar always-visible min-width",
+            "description": "Deprecated: Browser window width size (in pixels) for the left sidebar to appear. Use this setting to hide the left sidebar.",
+            "type": "size",
+            "defaultValue": "1400px",
+            "aliases": [
+              "gbc-sidebar-always-visible-min-width"
+            ],
+            "deprecated": true
+          },
+          {
+            "name": "theme-sidebar-default-width",
+            "title": "Theme sidebar default width",
+            "description": "Default size of sidebar in pixels.",
+            "type": "size",
+            "defaultValue": "56px",
+            "aliases": [
+              "gbc-sidebar-default-width"
+            ]
+          },
+          {
+            "name": "theme-sidebar-max-width",
+            "description": "Sidebar max width",
+            "type": "size",
+            "defaultValue": "156px",
+            "aliases": [
+              "gbc-sidebar-max-width"
+            ]
+          },
+          {
+            "name": "theme-sidebar-show-child-name",
+            "description": "Display Window name/title in sidebar instead of Application name/title",
+            "type": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "theme-toggle-chromebar-min-width",
+            "title": "chromebar toggling min-width",
+            "description": "Warning, this is a deprecated feature! Browser window width size (in pixels) for the chromebar to appear. Use this setting to hide the chromebar.",
+            "type": "size",
+            "defaultValue": "720px",
+            "aliases": [
+              "theme-toggle-right-sidebar-min-width",
+              "gbc-toggle-right-sidebar-min-width"
+            ],
+            "deprecated": true
+          },
+          {
+            "name": "theme-group-separation-size",
+            "description": "Group separation size",
+            "type": "size",
+            "defaultValue": "$theme-margin-ratio * 12",
+            "aliases": [
+              "group-separation-size"
+            ]
+          },
+          {
+            "name": "theme-splitter-size",
+            "title": "Theme splitter size",
+            "description": "Splitter size",
+            "type": "size",
+            "defaultValue": "$theme-group-separation-size * 1px",
+            "aliases": [
+              "splitter-size"
+            ]
+          },
+          {
+            "name": "theme-traditional-mode-letter-spacing",
+            "description": "Traditional mode letter spacing",
+            "type": "size",
+            "defaultValue": "1px",
+            "aliases": [
+              "traditional-mode-letter-spacing"
+            ]
+          },
+          {
+            "name": "theme-max-icon-size",
+            "description": "Max icon size",
+            "type": "size",
+            "defaultValue": "32px",
+            "aliases": [
+              "gbc-max-icon-size"
+            ]
+          },
+          {
+            "name": "theme-small-icon-size",
+            "description": "Small icon size",
+            "type": "size",
+            "defaultValue": "20px * $theme-font-size-ratio"
+          },
+          {
+            "name": "theme-grid-inner-gutter",
+            "description": "Inner gutter spacing in grid content",
+            "type": "number",
+            "defaultValue": 3,
+            "aliases": [
+              "layout-grid-inner-gutter"
+            ]
+          },
+          {
+            "name": "theme-grid-inner-gutter-x",
+            "description": "Inner gutter row spacing in grid",
+            "type": "number"
+          },
+          {
+            "name": "theme-grid-inner-gutter-y",
+            "description": "Inner gutter column spacing in grid",
+            "type": "number"
+          }
+        ]
+      },
+      {
+        "name": "theme-misc",
+        "title": "Theme miscellaneous",
+        "description": "Defines theme variables",
+        "type": "group",
+        "contents": [
+          {
+            "name": "theme-font-family",
+            "title": "Theme font family",
+            "description": "Set the font family",
+            "type": "string",
+            "defaultValue": "'Droid Sans, sans-serif'"
+          },
+          {
+            "name": "theme-font-family-monospace",
+            "title": "Theme font family monospace",
+            "description": "Set the monospace font family",
+            "type": "string",
+            "defaultValue": "'Droid Sans Mono, monospace'"
+          },
+          {
+            "name": "theme-animation-duration",
+            "description": "Animation duration (in seconds), such as the speed of Product identication window pop-down appearance.",
+            "type": "string",
+            "defaultValue": "0.3s",
+            "aliases": [
+              "gbc-animation-duration"
+            ]
+          },
+          {
+            "name": "theme-disable-ending-popup",
+            "description": "Deactivates the pop-up warning displayed on leaving an application. The pop-up warning will be shown if at least one interaction/change has occurred on the application. In development mode on httpdispatch or using the debugMode=1 query string, the popup is never shown.",
+            "type": "boolean",
+            "defaultValue": "false",
+            "aliases": [
+              "gbc-disable-ending-popup",
+              "gbc-desactivate-ending-popup"
+            ]
+          },
+          {
+            "name": "theme-disable-context-menu",
+            "title": "Disable context menu",
+            "description": "Disable the genero context menu",
+            "type": "boolean",
+            "defaultValue": true,
+            "aliases": [
+              "gbc-disable-context-menu"
+            ]
+          },
+          {
+            "name": "theme-scrollers-clickonly",
+            "description": "Define general scrollers behavior",
+            "type": "boolean",
+            "defaultValue": false,
+            "aliases": [
+              "gbc-scrollers-clickonly"
+            ]
+          },
+          {
+            "name": "theme-scrollers-speed",
+            "description": "Define the scrollers speed",
+            "type": "number",
+            "defaultValue": 10,
+            "aliases": [
+              "gbc-scrollers-speed"
+            ]
+          },
+          {
+            "name": "theme-message-display-time",
+            "description": "Specify the number of seconds to display the message pane<ul><li>A positive value is the number of seconds to display the pane before fade-out.</li><li>Set to zero (0) to always show the pane.</li><li>Set to a negative value to always hide the pane.</li></ul>",
+            "type": "number",
+            "defaultValue": 0,
+            "aliases": [
+              "gbc-message-display-time"
+            ]
+          },
+          {
+            "name": "theme-message-display-position",
+            "description": "Position of the message panel. Valid values are:<ul><li>top-left</li><li>top-center</li><li>top-right</li><li>bottom-left</li><li>bottom-center</li><li>bottom-right (default)</li></ul>If the error and message positions are defined for the same place, the two panels will stack.",
+            "type": "message-display-position",
+            "defaultValue": "bottom-right",
+            "aliases": [
+              "gbc-message-position"
+            ]
+          },
+          {
+            "name": "theme-error-display-time",
+            "description": "Specify the number of seconds to display the error message pane<ul><li>A positive value is the number of seconds to display the pane before fade-out.</li><li>Set to zero (0) to always show the pane.</li><li>Set to a negative value to always hide the pane.</li></ul>",
+            "type": "number",
+            "defaultValue": 0,
+            "aliases": [
+              "gbc-error-display-time"
+            ]
+          },
+          {
+            "name": "theme-error-display-position",
+            "description": "Position of the error panel. Valid values are:<ul><li>top-left</li><li>top-center</li><li>top-right</li><li>bottom-left</li><li>bottom-center</li><li>bottom-right (default)</li></ul> If the error and message positions are defined for the same place, the two panels will stack.",
+            "type": "message-display-position",
+            "defaultValue": "bottom-right",
+            "aliases": [
+              "gbc-error-position"
+            ]
+          },
+          {
+            "name": "theme-collapser-position",
+            "description": "Define the default collapser position (left or right)",
+            "type": "string",
+            "defaultValue": "left"
+          },
+          {
+            "name": "aui-mutation-watch",
+            "title": "Gbc Watch aui mutations",
+            "description": "Enable watching aui mutations",
+            "type": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "aui-mobileUI-default",
+            "title": "Define if 'mobileUI' flag is sent to DVM",
+            "description": "Set mobile AUI as default",
+            "type": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "aui-json-protocol",
+            "title": "JSON Aui protocol",
+            "description": "Use JSON Aui protocol to avoid parsing",
+            "type": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "theme-action-name-backward-compatibility",
+            "title": "Compatibility for action name behavior of GBC under 4.01",
+            "description": "Fallback on action name (for Topmenu, Toolbar and ContextMenu) if there is no text or icon defined for the action",
+            "type": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "theme-table-default-widget",
+            "title": "Gbc table default widget",
+            "description": "Gbc default widget used to render table (if value is 'listview' table will be rendered as listview by default else it will be rendered as normal table). Behavior can still be override by 4ST (tableType).",
+            "type": "string",
+            "defaultValue": "table"
+          },
+          {
+            "name": "theme-default-reduceFilter",
+            "title": "Define if 'reduceFilter' is set by default for Tables and ScrollGrids",
+            "description": "Force using reduce Filter if not define as a 4ST style",
+            "type": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "theme-webkit-scrollbars-global-enable",
+            "title": "Theme webkit scrollbars enabled for all gbc",
+            "description": "Use webkit rendering for scrollbars (check <xref href=\"https://caniuse.com/?search=webkit-scrollbar\" format=\"html\" scope=\"external\">https://caniuse.com/?search=webkit-scrollbar</xref> for browser compatibility)",
+            "type": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "theme-webkit-scrollbars-size",
+            "title": "Theme webkit scrollbars size",
+            "description": "Define webkit scrollbars size",
+            "type": "size",
+            "defaultValue": "8px"
+          },
+          {
+            "name": "theme-table-minimal-row-height",
+            "title": "Theme minimal table row height",
+            "description": "Define the minimal table row height in pixels",
+            "type": "number",
+            "defaultValue": 24
+          },
+          {
+            "name": "theme-table-minimal-row-height-on-touchscreen",
+            "title": "Theme minimal table row height",
+            "description": "Define the minimal table row height in pixels only for mobile",
+            "type": "number",
+            "defaultValue": 32
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "main-color-palettes",
+    "title": "Main color palettes",
+    "description": "Defines general colors palettes appearing in the customization",
+    "type": "group",
+    "contents": [
+      {
+        "name": "palette-primary",
+        "title": "Primary color base",
+        "description": "Defines the theme's main color base",
+        "type": "color",
+        "generator": "material-color",
+        "defaultValue": "$mt-blue",
+        "aliases": [
+          "primary"
+        ]
+      },
+      {
+        "name": "palette-secondary",
+        "title": "Secondary color base",
+        "description": "Defines the theme's secondary color base",
+        "type": "color",
+        "generator": "material-color",
+        "defaultValue": "$mt-grey"
+      },
+      {
+        "name": "palette-disabled",
+        "title": "Disabled color base",
+        "description": "Defines the theme's disabled color base",
+        "type": "color",
+        "generator": "material-color",
+        "defaultValue": "$mt-grey"
+      },
+      {
+        "name": "palette-text-primary",
+        "title": "Text Light",
+        "description": "Defines the theme's primary text color base",
+        "const": true,
+        "type": "color",
+        "generator": "material-text-color",
+        "value": "$mt-text-white",
+        "aliases": [
+          "text-light"
+        ]
+      },
+      {
+        "name": "palette-text-secondary",
+        "title": "Text Dark",
+        "description": "Defines the theme's secondary text color base",
+        "const": true,
+        "type": "color",
+        "generator": "material-text-color",
+        "value": "$mt-text-black",
+        "aliases": [
+          "text-dark"
+        ]
+      },
+      {
+        "name": "palette-background",
+        "title": "Background",
+        "description": "Defines the theme's default background color",
+        "const": true,
+        "type": "color",
+        "generator": "material-color",
+        "value": "$mt-white"
+      },
+      {
+        "name": "palette-error",
+        "title": "Error color",
+        "description": "Defines the theme's error background color",
+        "const": true,
+        "type": "color",
+        "generator": "material-color",
+        "value": "$mt-red"
+      }
+    ]
+  },
+  {
+    "name": "features",
+    "title": "Features",
+    "description": "Defines theme variables for GBC features, such as fonts, HTML defaults, swipe navigation style, responsive layout, and z-indexes.",
+    "type": "group",
+    "contents": "features/**/*.json"
+  },
+  {
+    "name": "material",
+    "title": "Material variables",
+    "description": "Defines theme variables that apply to a specific component.",
+    "type": "group",
+    "contents": "material/**/*.json"
+  },
+  {
+    "name": "widgets",
+    "title": "Widgets specific variables",
+    "description": "Configure variables specific to a widget.",
+    "type": "group",
+    "contents": "widgets/**/*.json"
+  },
+  {
+    "name": "constants",
+    "title": "Constant variables",
+    "description": "Constants variables that can be used but not modified.",
+    "type": "group",
+    "contents": "constants/**/*.json"
+  },
+  {
+    "name": "deprecated",
+    "title": "Deprecated variables",
+    "description": "Deprecated variables that will be removed.",
+    "type": "group",
+    "contents": [
+      {
+        "name": "gbc-primary-strong-color",
+        "type": "color",
+        "description": "deprecated variable that will be removed",
+        "deprecated": true
+      },
+      {
+        "name": "gbc-secondary-color",
+        "type": "color",
+        "description": "deprecated variable that will be removed",
+        "deprecated": true
+      }
+    ]
+  }
+]
